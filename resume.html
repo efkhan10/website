@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="my resume page in PDF format">
+    <title>Emaan Khan | Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+    .syne-uniquifier {
+        font-family: "Syne", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 800;
+        font-style: normal;
+        font-size: 60px;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: white;  
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 1.6;
+        color: black;
+    }
+    #navbar {
+		/*border-top: 1px solid #CCC;
+		border-bottom: 1px solid #CCC; */
+		display: flex;
+		justify-content: center;
+		background-color: white;
+        height: 50px;
+        width: 100%
+	}
+
+	#navbar a {
+		text-decoration: none;
+		font-size: 1.2em;
+		color: #135EAB;
+		width: 130px;
+		text-align: center;
+		padding: 10px;
+		display: block;
+	}
+
+	#navbar a:hover {
+		border-bottom: 2px solid white;
+		color: #135EAB;
+	}
+    #footer {
+        margin: 0;
+        background-color: white;
+        background-size: cover;
+        text-align: center;
+        font-size: 0.8em;
+        padding-bottom: 20px;
+        padding-top: 10px;
+    }
+    #header {                          
+        background-color: white;  
+        height: 50px;
+        background-size: cover;
+        padding-top: 5px;
+		padding-bottom: 80px;                      
+        text-align: center;                    
+        color: #135EAB;                             
+    }
+	iframe {
+        width: 1000px; 
+        height: 900px;
+        display: block;
+        margin-bottom: 40px;
+
+	}
+    @media (max-width: 1024px) {
+        #navbar {
+            gap: 10px;
+            padding-top: 15px;
+        }
+        #navbar a {
+            font-size: 1.1em;
+            padding: 0px;
+        }
+
+        #navbar img {
+            height: 18px;
+            margin-top: 12px;
+        }
+        .syne-uniquifier {
+            font-size: 40px;
+            text-align: center;
+        }
+        body{
+            justify-content: center;
+            align-items: center;
+        }
+        iframe {
+            width: 90%;
+            height: 700px;
+        }
+    }
+    @media (max-width: 767px) {
+        #navbar {
+            display: flex;
+            gap: 5px;
+            height: auto;
+            padding-bottom: 10px;
+        }
+
+        #navbar a {
+            font-size: 1em;
+            padding: 8px 12px;
+            white-space: nowrap;
+        }   
+
+        #navbar img {
+            height: 18px;
+            margin-top: 8px;
+        }
+
+        .syne-uniquifier {
+            font-size: 28px;
+            text-align: center;
+        }
+        body{
+            justify-content: center;
+            align-items: center;
+        }
+        iframe {
+            width: 100%;
+            height: 450px;
+        }
+    }
+   
+
+
+
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <a href="homepage.html" class="active">Home</a>
+        <a href="resume.html">Resume</a>
+        <img src="NavLogo.png" alt="Logo" style="height:20px; margin-top:15px; margin-bottom:5px;">
+        <a href="aboutme.html">About Me</a>
+        <a href="mailto:efkhan@usc.edu">Email</a>
+    </div>
+
+    <div id="header">
+        <h1 class="syne-uniquifier" > resume </h1> 
+    </div>
+    <p>Request to Access(approvals within 1 hour)</p>
+    <iframe src="https://drive.google.com/file/d/1PTapOziZXJ-YCF0Disc5IS91Dq6TodNJ/view?usp=sharing" type="application/pdf">
+        Your browser does not support PDFs. 
+        <a href="https://drive.google.com/file/d/1PTapOziZXJ-YCF0Disc5IS91Dq6TodNJ/view?usp=sharing">Request to Access(approvals within 1 hour)</a>.
+    </iframe>
+    </div>
+    <div id="footer">
+        <p> &copy; 2025 Emaan Khan | efkhan@usc.edu | 
+            <a href="https://www.linkedin.com/in/emaankhan-/" target="_blank" rel="noopener noreferrer" class="linkedin-btn" style="font-size:20px; color:black; padding:3px; margin-top:5px;">
+            <i class="fa fa-linkedin-square"></i>
+            </a>
+        </p>
+    </div>
+</body>
+</html>
