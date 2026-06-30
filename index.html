@@ -34,69 +34,72 @@
         line-height: 1.6;
         color: black;
     }
-    #navbar {
-		/*border-top: 1px solid #CCC;
-		border-bottom: 1px solid #CCC; */
-		display: flex;
-		justify-content: center;
-		background-color: white;
-        height: 50px;
-        padding-top: 10px;
-	}
-
-	#navbar a {
-		text-decoration: none;
-		font-size: 1.2em;
-		color: #135EAB;
-		width: 130px;
-		text-align: center;
-		padding: 10px;
-		display: block;
-		}
-
-	#navbar a:hover {
-		border-bottom: 2px solid white;
-		color: #135EAB;
-	}
-
-    #header {                          
-        background-color: white;  
-        height: 50px;
+    #hero {
+        background-color: white;
         background-size: cover;
-        padding-top: 0px;
-		padding-bottom: 100px;                      
-        text-align: center;                    
-        color: #135EAB;                             
+        background-position: center 80%;
+        background-repeat: no-repeat;
+        min-height: 35vh;   /* smaller hero url("hero_background.png")*/
+        display: flex;
+        flex-direction: column;
     }
-    .projectsection{
-        justify-content: center; 
-        align-items: start;
+    #navbar {
+        background: transparent;
+    }
+    h1{
+        color: #004535;    
+        padding-left: 40px;
+        margin: 0px;              
+    }
+    #header {                          
+        min-height: 60px; 
+        display: flex;
         flex-direction: row;
-        margin: 0 auto;  
-        flex-wrap: wrap;  
-        max-width: 1200px;  
-        gap: 50px;
-        position: relative; 
-        height: 800px;
+        justify-content: space-between;
+        align-items: flex-start;  
+        background: transparent;
+        padding-top: 0px;                
+        text-align: center;  
+        color: #004535;    
+        margin: 0;
+              
+       /* color: #135EAB;  */     
     }
+    #header-intro {
+        max-width: 700px;
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-top: 25px;
+    }
+    .projectsection {
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 350px);
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        position: static;
+        padding: 20px 0;
+        }
     
     .projectboxes {
         background-color: #fff;
         align-items: center;
         justify-content: center;
         padding: 20px;
-        position: absolute;
+        position: relative;
         text-align: center;
         display: flex;
         /*transition: transform .3s;
         box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
         border-radius: 10px;
         /*transition: transform .3s;
-        /*opacity: 0;*/
+        opacity: 0;*/
     }
 
     .project-image {
-        width: 100%;
+        width: 350px;
         height: auto;
         /* width: 200px;  fixed width */
         /* fheight: 200px; ixed height */
@@ -111,6 +114,7 @@
         margin: 0px ;
         padding: 10px;
         font-size: 1.2em;
+        width: 300px;
     }
     h2{
         font:"inter-uniquifier" ;
@@ -132,7 +136,7 @@
         top: 30%;
         background: white;
         color: black;
-        width: 90%;
+        width: 100%;
         text-align: center;
         align-items: center;
         display: flex;
@@ -144,7 +148,7 @@
         font-size: 0.9em;
     }
     .projectboxes:hover .project-image {
-    opacity: 0;                 
+    opacity: .2;                 
     }
 
     .projectboxes:hover .overlay {
@@ -176,7 +180,9 @@
 
         .projectsection {
             height: auto;
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(3, 300px);
+            max-width: 1100px;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
@@ -188,6 +194,8 @@
         .projectboxes {
             position: static;
             width: 300px;
+            text-align: center;
+            position: relative; /* keeps overlay working */
         }
     }
     @media (max-width: 767px) {
@@ -236,21 +244,29 @@
     </style>
 </head>
 <body>
+<div id="hero">
     <div id="navbar">
-        <a href="homepage.html" class="active">Home</a>
-        <a href="resume.html">Resume</a>
-        <img src="NavLogo.png" alt="Logo" style="height:20px; margin-top:15px; margin-bottom:5px;">
-        <a href="aboutme.html">About Me</a>
-        <a href="mailto:efkhan@usc.edu">Email</a>
-    </div>
-    <div id="header">
-        <h1 class="syne-uniquifier" > emaan khan </h1>
+        <img src="NavLogo.png" alt="Logo" style="height:18px;">
+        <div>
+            <a href="homepage.html" class="active">Work</a>
+            <a href="resume.html">Resume</a>
+            <a href="aboutme.html">About</a>
+            <a href="mailto:efkhan@usc.edu">Email</a>
+        </div>
     </div>
 
+    <div id="header">
+        <h1 class="syne-uniquifier" > emaan khan </h1>
+        <div id="header-intro"> 
+            <p><em>Cognitive science, AI applications & disruptive innovation at USC building products, technology, and startups.</em></p>
+        </div>   
+    </div>
+</div>
+
     <div class="projectsection">
-        <div class="projectboxes" style="top: 0px; left: 50px; width: 400px;">
+        <div class="projectboxes">
             <a href="hestia.html">
-                <img src="projectlogos/hestiapossiblehomepage.png" alt="Hestia Logo" class="project-image">
+                <img src="projectlogos/HestiaLogoo1.png" alt="Hestia Logo" class="project-image">
                 <div class="overlay">
                     <h2>Hestia</h2>
                     <p class="captions">Revolutionizing the way young professionals live, work, and connect.</p>
@@ -258,17 +274,25 @@
             </a>
         </div>
 
-        <div class="projectboxes" style="top: 0px; left: 490px; width:250px;">
+        <div class="projectboxes">
             <a href="venus.html">
-                <img src="projectlogos/venushomepagelogo.png" alt="VENUS Logo" class="project-image" style="border-radius: 30px; " >
+                <img src="projectlogos/VenusLogo1.png" alt="Venus Logo" class="project-image"  >
                 <div class="overlay">
                     <h2>Venus</h2>
                     <p class="captions">Re-imagining mirrors and gettin ready.</p>
                 </div>
             </a>
         </div>
-
-        <div class="projectboxes" style="top: 0px; left: 800px; width: 250px;">
+        <div class="projectboxes">
+            <a href="scout.html">
+                <img src="projectlogos/ScoutSCLogo.png" alt="Scout Logo" class="project-image" >
+                <div class="overlay">
+                    <h2>Scout</h2>
+                    <p class="captions"> Partnered with Snapchat, an AR app to be used with the Snapchat Spectacles aimed at enhancing the outdoor experience</p>
+                </div>
+            </a>
+        </div>    
+        <div class="projectboxes" >
             <a href="aipolicy.html">
                 <img src="projectlogos/aipolicylogo.svg" alt="AI Policy Logo" class="project-image" >
                 <div class="overlay">
@@ -276,25 +300,35 @@
                     <p class="captions">Developed a streamlined process for assessing an AI model's impacts and risks aligning with the EU AI Act frameworks.</p>
                 </div>
             </a>
-        </div>   
-        <div class="projectboxes" style="top: 250px; left: 100px; width:300px;">
-            <a href="cadprojects.html">
-                <img src="projectlogos/cadprojectlogo.png" alt="CAD Project Logo" class="project-image" >
-                <div class="overlay">
-                    <h2>Cad Projects</h2>
-                    <p class="captions"> 3D modeling projects</p>
-                </div>
-            </a>
         </div>  
-        <div class="projectboxes" style="top: 325px; left: 800px; width:250px">
+        <div class="projectboxes" >
             <a href="shiftscprojects.html">
-                <img src="projectlogos/shiftsclogo.png" alt="Shift SC Logo" class="project-image" style="border-radius: 30px; " >
+                <img src="projectlogos/shiftsclogo.png" alt="Shift SC Logo" class="project-image" >
                 <div class="overlay">
                     <h2>Shift SC</h2>
                     <p class="captions">Founded and led public policy intiative and created an AI ethics educational module</p>
                 </div>
             </a>
         </div>   
+        <div class="projectboxes" >
+            <a href="psycnnsimulation.html">
+                <img src="projectlogos/psychologysimulationlogo.png" alt="Psychology Logo" class="project-image" >
+                <div class="overlay">
+                    <h2>Psychology Neural Nework Simulation</h2>
+                    <p class="captions">Constructed a GO based neural network simulation to examine food purchasing decision-making using the Incentive Salience Model</p>
+                </div>
+            </a>
+        </div>  
+        <div class="projectboxes">
+            <a href="cadprojects.html">
+                <img src="projectlogos/CADLogo1.png" alt="CAD Project Logo" class="project-image" >
+                <div class="overlay">
+                    <h2>Cad Projects</h2>
+                    <p class="captions"> 3D modeling projects</p>
+                </div>
+            </a>
+        </div>  
+
     </div>
 
     <div id="footer">
