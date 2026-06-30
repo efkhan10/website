@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>DQN Taxi Report</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.18.0/plotly.min.js"></script>
+
+    <style>
+         body {
+            font-family: Arial; 
+            padding: 20px; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+        .main{
+            flex: 2;       
+            padding: 15px;
+        }
+        .sidebar{
+            flex: 1;
+            width: 150px;
+            padding: 15px;
+
+        }
+        .card {
+            background: #f5f5f5; 
+            padding: 20px; 
+            margin: 20px 0; 
+            border-radius: 8px; }
+        .chartgrid{
+            display: grid;
+            grid-template-columns: 2fr 2fr;
+            gap: 20px;
+            padding: 20px;
+        }
+        .chart { 
+            margin: 30px 0; }
+    </style>
+</head>
+<body>
+    <h1>DQN Taxi-v3 Training Report</h1>
+    <div class="sidebar">
+        <div class="card">
+            <h2> Run Configuration Stats</h2>
+            <ul style="list-style-type: none;"> </ul>
+                <li> <strong> Mode: </strong> {config['mode']}</li>
+                <li> <strong> Episodes: </strong> {config['episodes']}</li>
+                <li> <strong> Batch Size: </strong> {config['batch_size']}</li>
+                <li> <strong> Replay Buffer Size: </strong> {config['replay_buffer_size']}</li>
+                <li> <strong> Learning Rate: </strong> {config['learning_rate']}</li>
+                <li> <strong> Target Update Freq: </strong> {config['target_update_freq']}</li> 
+            </ul>
+        </div>
+        <div class="card">
+            <h2> Run Configuration Stats</h2>
+            <ul style="list-style-type: none;"> </ul>
+                <li> <strong> Early Avg Reward: </strong> avg_reward_start:.25 → <strong> Late Avg Reward: </strong>{avg_reward_end:.2f}</li>
+                <li> <strong> Change </strong> {reward_change:+.2f}</li>
+                <li> <strong> Early Avg Steps: </strong> {avg_steps_start:.2f} → <strong> Late Avg Steps: </strong>{avg_steps_end:.2f} </li>
+                <li> <strong> Reduction: </strong> {steps_change:+.2f}</li> 
+                <li> {f'<p>Evaluation (No Exploration): Avg Reward = {eval_avg_reward:.2f}, Avg Steps = {eval_avg_steps:.2f}' if eval_stats else ''}</li>
+            </ul>
+        </div>     
+        </div>
+    </div>
+    <div class="main">
+        <div class="chartgrid">
+            <div class="chart">
+                <h2>1. Total Reward per Episode</h2>
+                <div id="rewards"></div>
+            </div>
+            <div class="chart">
+                <h2>2. Epsilon (Exploration Rate) Decay</h2>
+                <div id="epsilon"></div>    
+            </div>
+            <div class="chart">
+                <h2>3. Average Loss per Episode</h2>
+                <div id="loss"></div>   
+            </div>
+            <div class="chart">
+                <h2>4. Steps per Episode</h2>
+                <div id="steps"></div>  
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const episodes = {list(range(1, len(rewards) + 1))};
+        
+        Plotly.newPlot('rewards', [{{
+            x: episodes, y: {rewards}, type: 'lind', mode: 'lines+markers'
+        }}], {{xaxis: {{title: 'Episode'}}, yaxis: {{title: 'Total Reward'}}}});
+        
+        Plotly.newPlot('epsilon', [{{
+            x: episodes, y: {epsilons}, type: 'scatter', mode: 'lines+markers'
+        }}], {{xaxis: {{title: 'Episode'}}, yaxis: {{title: 'Epsilon'}}}});
+        
+        Plotly.newPlot('loss', [{{
+            x: episodes, y: {losses_js}, type: 'scatter', mode: 'lines+markers'
+        }}], {{xaxis: {{title: 'Episode'}}, yaxis: {{title: 'Loss'}}}});
+        
+        Plotly.newPlot('steps', [{{
+            x: episodes, y: {steps}, type: 'scatter', mode: 'lines+markers'
+        }}], {{xaxis: {{title: 'Episode'}}, yaxis: {{title: 'Steps'}}}});
+    </script>
+</body>
+</html>

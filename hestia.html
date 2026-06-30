@@ -34,29 +34,6 @@
         line-height: 1.6;
         color: black;
     }
-     #navbar {
-		/*border-top: 1px solid #CCC;
-		border-bottom: 1px solid #CCC; */
-		display: flex;
-		justify-content: center;
-		background-color: white;
-        height: 50px;
-	}
-
-	#navbar a {
-		text-decoration: none;
-		font-size: 1.2em;
-		color: #135EAB;
-		width: 130px;
-		text-align: center;
-		padding: 10px;
-		display: block;
-		}
-
-	#navbar a:hover {
-		border-bottom: 2px solid white ;
-		color: #135EAB;
-	}
     #footer {
         margin: 0;
         background-color: white;
@@ -73,7 +50,7 @@
         padding-top: 5px;
 		padding-bottom: 80px;                      
         text-align: center;                    
-        color: #135EAB;                             
+        color: #EBA6A6;                             
     }
     .overview{  
         margin: 50px auto;   
@@ -172,13 +149,14 @@
 </head>
 <body>
     <div id="navbar">
-        <a href="homepage.html" class="active">Home</a>
-        <a href="resume.html">Resume</a>
-        <img src="NavLogo.png" alt="Logo" style="height:20px; margin-top:15px; margin-bottom:5px;">
-        <a href="aboutme.html">About Me</a>
-        <a href="mailto:efkhan@usc.edu">Email</a>
+        <a href="homepage.html">emaan khan</a>
+        <div>
+            <a href="homepage.html" >Work</a>
+            <a href="resume.html" class="active" >Resume</a>
+            <a href="aboutme.html">About</a>
+            <a href="mailto:efkhan@usc.edu">Email</a>
+        </div>
     </div>
-
     <div id="header">
         <p> <h1 class="syne-uniquifier" > hestia </h1> 
         <small><em>A 5 month long incubator to create a new product based on market opportunity and validate the idea by launching Meta Ads and evaluating the funnel</em></small></p>
@@ -408,5 +386,24 @@
         </p>
     </div>
 
+</body>
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+  const slides = document.getElementsByClassName("slide");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex - 1].style.display = "block";
+}
+</script>
 </body>
 </html>
