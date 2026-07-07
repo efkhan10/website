@@ -123,7 +123,7 @@
         width: auto;
         margin-top: -22px;
         padding: 16px;
-        color: black;
+        color: white;
         font-weight: bold;
         font-size: 18px;
         transition: 0.6s ease;
@@ -218,7 +218,7 @@
     <div class="two-col">
         <div class="section">
                 <video autoplay muted controls loop>
-                    <source src="projectimages/scout/ScoutClip_reduce .mov" style="width: 100%;"> /* doesnt load and im not sure why because the path is correct */
+                    <source src="projectimages/scout/ScoutClip_reduce.mov" style="width: 100%;"> /* doesnt load and im not sure why because the path is correct */
 		        </video>
         </div>
         <div class="section">
@@ -232,52 +232,102 @@
                     <li>Artifact creation and discovery system</li>
                     <li>Gamified treasure hunt mechanics</li>
                 </ol>
-            <p class="inter-uniquifier" style="font-weight: 200;"> User Interaction Map shown on the right </p>
         </div>
     </div>
 
     <div class="two-col">
         <div class="section">
-            <p class="inter-uniquifier" style="font-weight: 200; margin-left: 0; "> User Interaction Map shown on the right </p>
+            <p class="inter-uniquifier" style="font-weight: 200; margin-left: 75px; margin-right: 0;"> User Interaction Map shown on the right </p>
         </div>
         <div class="section">
             <img src="projectimages/scout/ScoutUXMap.png" alt="Scout Image" style="width:400px; display:block; margin-left: 0; margin-right: auto">        </div>
         </div>
     </div>
-
     <div class="section">
-        <h3 class="inter-uniquifier" style="font-weight: 300;"> App Design </h3>
-         <div class="three-col">
-            <div class="section">
-                <img src="projectimages/scout/scoutintro.png" alt="Scout Image" style="width:200px;">
+        <h3 class="inter-uniquifier" style="font-weight: 200;"> App Design </h3>
+    </div>
+   <div class="two-col">
+        <div class="section">
+            <div class="slideshow-container" id="appDesignSlides" style="width: 300px;">
+                <div class="slide"> 
+                    <div class="slidenum">1 / 4</div>
+                    <img src="projectimages/scout/DeerHeadArtifact copy.png" alt="Slide 1" style="width: 300px;">
+                </div>
+                <div class="slide"> 
+                    <div class="slidenum">2 / 4</div>
+                    <img src="projectimages/scout/ViewpointArtifacts copy.png" alt="Slide 2" style="width: 300px;">
+                </div>
+                <div class="slide"> 
+                    <div class="slidenum">3 / 4</div>
+                    <img src="projectimages/scout/WarningArtifact copy.png" alt="Slide 3" style="width:300px; ">
+                </div> 
+                <div class="slide"> 
+                    <div class="slidenum">4 / 4</div>
+                    <img src="projectimages/scout/scoutstats.png" alt="Slide 4" style="width: 300px;">
+                </div> 
+                <a class="prev" onclick="plusSlides(this, -1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(this, 1)">&#10095;</a> 
             </div>
-            <div class="section">
-                <img src="projectimages/scout/scoutstats.png" alt="Scout Image" style="width:200px;">
+        </div>
+        <div class="section">
+             <video autoplay muted controls loop style="width: 300px">
+                    <source src="projectimages/scout/scoutrecording!.mp4"> /* doesnt load and im not sure why because the path is correct */
+		    </video>
+        </div>
+    </div>
+    <div class="section">
+        <h3 class="inter-uniquifier" style="font-weight: 200;"> User Testing </h3>
+    </div>
+    <div class="two-col">
+        <div class="section">
+            <div class="slideshow-container" id="userTestingSlides">
+                <div class="slide"> 
+                    <div class="slidenum">1 / 2</div>
+                    <img src="projectimages/scout/usertesting1.png" alt="Slide 1">
+                </div>
+                <div class="slide"> 
+                    <div class="slidenum">2 / 2</div>
+                    <img src="projectimages/scout/usertesting2.png" alt="Slide 2">
+                </div> 
+                <a class="prev" onclick="plusSlides(this, -1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(this, 1)">&#10095;</a> 
             </div>
-            <div class ="section">
-                <video autoplay muted controls loop>
-                    <source src="projectimages/scout/scoutrecording!.mp4" style="width: 200px;"> /* doesnt load and im not sure why because the path is correct */
-		        </video>
-            </div>
+        </div>
+        <div class="section">
+            <h5 class="inter-uniquifier" style="font-weight: 200; font-style: italic;">What worked well:</h5>
+            <ul class="inter-uniquifier" style="font-weight: 200; font-size: 14px;">
+                <li>Positive first impressions of the starting scene UI across all testers</li>
+                <li>Users engaged well with the stats page, especially those already familiar with fitness tracking apps like Strava</li>
+                <li>The artifact discovery concept resonated with users</li>
+                <li>Tutorial was effective when users engaged with it fully</li>
+            </ul>
+
+            <h5 class="inter-uniquifier" style="font-weight: 200; font-style: italic;">Areas for improvement:</h5>
+            <ul class="inter-uniquifier" style="font-weight: 200; font-size: 14px;">
+                <li>Menu bar and empty space in certain scenes caused confusion</li>
+                <li>Find and report buttons were inconsistent in functionality</li>
+                <li>Artifacts sometimes failed to appear/trigger, preventing users from viewing messages</li>
+                <li>Overall UI needs refinement to feel less static and more responsive to user movement</li>
+            </ul>
+
+            <h5 class="inter-uniquifier" style="font-weight: 200; font-style: italic;">Feature requests:</h5>
+            <ul class="inter-uniquifier" style="font-weight: 200; font-size: 14px;">
+                <li>More gamification, with comparisons to Pokémon Go</li>
+                <li>Artifacts and collectible elements should feel integrated rather than distracting</li>
+                <li>One non-hiker user expressed more interest in gamified elements than hiking-specific features</li>
+            </ul>
         </div>
     </div>
 
-    <div class="section">
-        <h3 class="inter-uniquifier" style="font-weight: 300;"> 3-D Blender Artifacts </h3>
-         <div class="three-col">
-            <div class="section">
-                <img src="projectimages/scout/DeerHeadArtifact copy.png" alt="Deer Head Artifact" style="width:200px;">
-            </div>
-            <div class="section">
-                <img src="projectimages/scout/ViewpointArtifacts copy.png" alt="ViewpointArtifact Image" style="width:200px;">
-            </div>
-            <div class ="section">
-                <img src="projectimages/scout/WarningArtifact copy.png" alt="Warning Artifact" style="width:200px">
-            </div>
+    <div class="two-col">
+        <div class="section">
+            <h3 class="inter-uniquifier" style="font-weight: 200;"> Snap Inc</h3>
+            <p class="inter-uniquifier" style="font-weight: 200; font-size: 14px;"> I had the opportunity to present Scout to Snap Inc. at their headquarters in Venice, CA. The product and engineering team was tested the concept and execution of the app, and provided valuable feedback for future iterations. </p>        
         </div>
-    </div>
-       
-    </div>
+        <div class="section">
+            <img src="projectimages/scout/snapchatheadquarters.png" style="width:200px; display:block; margin-left:auto; margin-right:auto;">
+        </div>
+    </div>  
        <!-- <div class="section">
         <h3 id="reflection" > Reflection</h3>
         <p> 
@@ -294,21 +344,27 @@
 
 </body>
 <script>
-let slideIndex = 1;
-showSlides(slideIndex);
+const slideIndexes = {};
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+document.querySelectorAll('.slideshow-container').forEach(container => {
+    slideIndexes[container.id] = 1;
+    showSlides(container.id, 1);
+});
+
+function plusSlides(el, n) {
+    const container = el.closest('.slideshow-container');
+    showSlides(container.id, slideIndexes[container.id] += n);
 }
 
-function showSlides(n) {
-  const slides = document.getElementsByClassName("slide");
-  if (n > slides.length) { slideIndex = 1 }
-  if (n < 1) { slideIndex = slides.length }
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slides[slideIndex - 1].style.display = "block";
+function showSlides(containerId, n) {
+    const container = document.getElementById(containerId);
+    const slides = container.getElementsByClassName("slide");
+    if (n > slides.length) { slideIndexes[containerId] = 1; n = 1; }
+    if (n < 1) { slideIndexes[containerId] = slides.length; n = slides.length; }
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[n - 1].style.display = "block";
 }
 </script>
 </body>

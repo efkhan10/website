@@ -3,107 +3,352 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <title>DQN Taxi Report</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.18.0/plotly.min.js"></script>
+    <title>Projects | Hestia</title>
+    <meta name="description" content="hestia project page covering my skills, experience, and execution of the project with supporting images">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="style.css">
 
     <style>
-         body {
-            font-family: Arial; 
-            padding: 20px; 
-            max-width: 1200px; 
-            margin: 0 auto; 
-        }
-        .main{
-            flex: 2;       
-            padding: 15px;
-        }
-        .sidebar{
-            flex: 1;
-            width: 150px;
-            padding: 15px;
+    .syne-uniquifier {
+        font-family: "Syne", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+        font-size: 60px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
 
-        }
-        .card {
-            background: #f5f5f5; 
-            padding: 20px; 
-            margin: 20px 0; 
-            border-radius: 8px; }
-        .chartgrid{
-            display: grid;
-            grid-template-columns: 2fr 2fr;
-            gap: 20px;
-            padding: 20px;
-        }
-        .chart { 
-            margin: 30px 0; }
+    .inter-uniquifier {
+        font-family: "Inter", sans-serif;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: white;  
+        /*background-color:#feefc3;;*/
+        line-height: 1.6;
+        color: black;
+    }
+
+    #footer {
+        margin: 0;
+        background-color: white;
+        background-size: cover;
+        text-align: center;
+        font-size: 0.8em;
+        padding-bottom: 20px;
+        padding-top: 10px;
+    }
+    #header {                          
+        background-color: white;  
+        height: 50px;
+        background-size: cover;
+        padding-top: 5px;
+		padding-bottom: 80px;                      
+        text-align: center;                    
+        color: #EBA6A6;                             
+    }
+    .overview{  
+        margin: 50px auto;   
+        width: 900px;
+        display: flex;
+        flex-wrap: wrap; 
+        gap: 50px;  
+        justify-content: center;
+    }
+    .overview-item{
+        display: flex;
+        flex-direction: column;
+    }
+    h5{
+        margin-bottom: 0px;
+    }
+    h3{
+        text-align: center;
+    }
+    .section {
+        width: 900px;
+		margin: auto;
+        justify-content: center;
+	}
+    .two-col {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        margin: 40px;
+        margin-left: 100px;
+        margin-bottom: 50px;
+        width: 1300px;;
+    }
+    .three-col {
+        display: flex;
+        justify-content: center;
+    }
+    .four-col {
+        display: flex;
+        justify-content: center;
+    }
+	video,
+		audio {
+			max-width: 100%;
+		}
+
+	iframe {
+		width: 100%;
+		height: 500px;
+	}
+    .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+    }
+
+    .slide {
+        display: none;
+
+    }
+    .slide img {
+        width: 100%;
+        height: auto;
+    }
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: black;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
+    .slidenum {
+        color: black;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+        right:0;
+    }
+    .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+    @keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+    }
     </style>
 </head>
 <body>
-    <h1>DQN Taxi-v3 Training Report</h1>
-    <div class="sidebar">
-        <div class="card">
-            <h2> Run Configuration Stats</h2>
-            <ul style="list-style-type: none;"> </ul>
-                <li> <strong> Mode: </strong> {config['mode']}</li>
-                <li> <strong> Episodes: </strong> {config['episodes']}</li>
-                <li> <strong> Batch Size: </strong> {config['batch_size']}</li>
-                <li> <strong> Replay Buffer Size: </strong> {config['replay_buffer_size']}</li>
-                <li> <strong> Learning Rate: </strong> {config['learning_rate']}</li>
-                <li> <strong> Target Update Freq: </strong> {config['target_update_freq']}</li> 
-            </ul>
-        </div>
-        <div class="card">
-            <h2> Run Configuration Stats</h2>
-            <ul style="list-style-type: none;"> </ul>
-                <li> <strong> Early Avg Reward: </strong> avg_reward_start:.25 → <strong> Late Avg Reward: </strong>{avg_reward_end:.2f}</li>
-                <li> <strong> Change </strong> {reward_change:+.2f}</li>
-                <li> <strong> Early Avg Steps: </strong> {avg_steps_start:.2f} → <strong> Late Avg Steps: </strong>{avg_steps_end:.2f} </li>
-                <li> <strong> Reduction: </strong> {steps_change:+.2f}</li> 
-                <li> {f'<p>Evaluation (No Exploration): Avg Reward = {eval_avg_reward:.2f}, Avg Steps = {eval_avg_steps:.2f}' if eval_stats else ''}</li>
-            </ul>
-        </div>     
-        </div>
-    </div>
-    <div class="main">
-        <div class="chartgrid">
-            <div class="chart">
-                <h2>1. Total Reward per Episode</h2>
-                <div id="rewards"></div>
-            </div>
-            <div class="chart">
-                <h2>2. Epsilon (Exploration Rate) Decay</h2>
-                <div id="epsilon"></div>    
-            </div>
-            <div class="chart">
-                <h2>3. Average Loss per Episode</h2>
-                <div id="loss"></div>   
-            </div>
-            <div class="chart">
-                <h2>4. Steps per Episode</h2>
-                <div id="steps"></div>  
-            </div>
+    <div id="navbar">
+        <a href="index.html">emaan khan</a>
+        <div>
+            <a href="index.html" class="active">Work</a>
+            <a href="resume.html">Resume</a>
+            <a href="aboutme.html">About</a>
+            <a href="mailto:efkhan@usc.edu">Email</a>
         </div>
     </div>
 
-    <script>
-        const episodes = {list(range(1, len(rewards) + 1))};
-        
-        Plotly.newPlot('rewards', [{{
-            x: episodes, y: {rewards}, type: 'lind', mode: 'lines+markers'
-        }}], {{xaxis: {{title: 'Episode'}}, yaxis: {{title: 'Total Reward'}}}});
-        
-        Plotly.newPlot('epsilon', [{{
-            x: episodes, y: {epsilons}, type: 'scatter', mode: 'lines+markers'
-        }}], {{xaxis: {{title: 'Episode'}}, yaxis: {{title: 'Epsilon'}}}});
-        
-        Plotly.newPlot('loss', [{{
-            x: episodes, y: {losses_js}, type: 'scatter', mode: 'lines+markers'
-        }}], {{xaxis: {{title: 'Episode'}}, yaxis: {{title: 'Loss'}}}});
-        
-        Plotly.newPlot('steps', [{{
-            x: episodes, y: {steps}, type: 'scatter', mode: 'lines+markers'
-        }}], {{xaxis: {{title: 'Episode'}}, yaxis: {{title: 'Steps'}}}});
-    </script>
+    <div id="header">
+        <p> <h1 class="syne-uniquifier" > applied neural networks </h1> 
+        <small><em>Deep Q-Learning agent trained to solve the Taxi-v3 environment, with an interactive HTML dashboard to visualize training performance</em></small></p>
+    </div>
+
+    <div class="overview">
+        <div class="overview-item">
+            <h5>Team:</h5>
+            <ul style="list-style-type: none;font-size: 12px;">
+                <li>Emaan Khan</li>
+                <li>Hannah Stettler</li>
+                <li>Katie Crimmins</li>
+            </ul>
+        </div>
+        <div class="overview-item">
+            <h5>Date:</h5>
+            <p><small>December 2025</small></p>
+        </div>
+        <div class="overview-item">
+            <h5>Course:</h5>
+            <ul style="list-style-type: none;font-size: 12px;">
+                <li>TAC 359</li>
+                <li>Applied Neural Networks</li>
+                <li>Professor Prescher</li>
+            </ul>
+        </div>
+        <div class="overview-item">
+            <h5>Skills:</h5>
+            <ul style="list-style-type: none;font-size: 12px;">
+                <li>Reinforcement Learning</li>
+                <li>Neural Network Design</li>
+                <li>Data Visualization</li>
+                <li>HTML/CSS Dashboarding</li>
+            </ul>
+        </div>
+        <div class="overview-item">
+            <h5>Tools:</h5>
+            <ul style="list-style-type: none;font-size: 12px;">
+                <li>Python</li>
+                <li>Keras / TensorFlow</li>
+                <li>Gym (Taxi-v3)</li>
+                <li>Plotly.js</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <p class="inter-uniquifier" style="font-weight: 100; font-style: italic; text-align: center;"> This project focused on implementing a Deep Q-Learning (DQN) agent to solve the Taxi-v3 environment by teaching a taxi to pick up and drop off passengers as efficiently as possible. </p>
+    </div>
+
+    <div class="section report-body">
+        <h3 class="inter-uniquifier" style="font-weight: 300;"> Summary </h3>
+        <p class="inter-uniquifier" style="font-weight: 200;">
+            We worked through the assignment code step-by-step, starting with the class-provided code and filling in each required component of the DQN process. This included building a small neural network to approximate Q-values, implementing an epsilon-greedy action strategy, and using the Bellman equation to update the model's predictions during training. We also generated plots to visualize rewards, epsilon decay, average steps, and loss, and built an interactive HTML dashboard to display the model's progress.
+        </p>
+        <p class="inter-uniquifier" style="font-weight: 200;">
+            After testing both FAST and FULL training modes, we compared their performance, experimented with hyperparameter adjustments, and evaluated how changes in learning rate, gamma, batch size, and number of episodes affected the model's ability to learn the most efficient taxi routes. Overall, the project helped us better understand how each reinforcement learning component contributes to learning and how training time, hyperparameters, and neural network design influence real-world performance.
+        </p>
+    </div>
+    <div class="section">
+        <h3 class="inter-uniquifier" style="font-weight: 200;"> Model Code </h3>
+        <iframe src="projectimages/tac359/TAC359Final.html" style="height: 600px; border: 1px solid #ddd; border-radius: 8px;"></iframe>
+    </div>
+
+    <div class="section report-body">
+        <h3 class="inter-uniquifier" style="font-weight: 300;"> Approach </h3>
+        <p class="inter-uniquifier" style="font-weight: 200;">
+            Our group worked through the assignment chronologically to ensure that we understood each step of the DQN process. The first step was reading through the provided code from Professor Prescher to understand which parts of the problem were already completed and where we needed to fill in information.
+        </p>
+        <p class="inter-uniquifier" style="font-weight: 200;">
+            The overall goal was to train a taxi model to pick up a passenger and drop them off as efficiently as possible. The taxi structure gets +20 points for dropping off correctly, -10 points for illegal pickup/dropoff, and -1 point per move — so over time, the model optimizes by maximizing long-term reward through fewer mistakes and shorter routes.
+        </p>
+        <p class="inter-uniquifier" style="font-weight: 200;">
+            To create the model we builta small Keras neural network with Dense layers, ReLU activations, and an Adam optimizer with MSE loss to approximate the Q-function; implementing the epsilon-greedy policy to balance exploration and exploitation; predicting Q-values for the current and next states and using the Bellman equation to update them; and generating plots for rewards and epsilon decay per episode.
+        </p>
+        <p class="inter-uniquifier" style="font-weight: 200;">
+            For the HTML dashboard, one of us had taken an HTML class this semester, so we used those lecture notes to structure the page and style it with CSS. We used Plotly.js for the charts, and Python's <code>{}</code> syntax to inject data directly into the HTML. We ran into trouble getting the file to load in-browser, so we pivoted to having the file automatically download instead, testing repeatedly to make sure the statistic cards and charts rendered correctly.
+        </p>
+        <p class="inter-uniquifier" style="font-weight: 200;">
+            For training, we added a retrain clause so we could reset the saved model and test new hyperparameters without old data interfering.
+        </p>
+    </div>
+
+    <div>
+        <h3 class="inter-uniquifier" style="font-weight: 300;"> Detailed Findings </h3>
+    </div>
+    <div class="two-col">
+        <div class="section">
+            <div class="slideshow-container" id="hyperparam2Slides" style="width: 500px;">
+                <div class="slide"> 
+                    <div class="slidenum">1 / 3</div>
+                        <img src="projectimages/tac359/Fastt200.png" alt="Slide 1" style="width: 500px;">
+                </div>
+                <div class="slide"> 
+                    <div class="slidenum">2 / 3</div>
+                    <img src="projectimages/tac359/Full375.png" alt="Slide 2" style="width: 500px;">
+                </div>
+                <div class="slide"> 
+                    <div class="slidenum">3 / 3</div>
+                    <img src="projectimages/tac359/Fast50.png" alt="Slide 3" style="width: 500px;">
+                </div>
+                <a class="prev" onclick="plusSlides(this, -1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(this, 1)">&#10095;</a>
+            </div>
+        </div>
+        <div class="section report-body">
+            <h5 class="inter-uniquifier" style="font-weight: 200; font-style: italic;">FAST Model</h5>
+            <p class="inter-uniquifier" style="font-weight: 200;">
+                The FAST mode ran 200 episodes at a batch size of 32. The gap between early and late average steps was only 2.48, showing minimal route optimization. Rewards per episode never rose above 0, and the epsilon graph decayed to just under 0.4 — still far from full exploitation, meaning the model was exploring randomly even near the end of training.
+            </p>
+
+            <h5 class="inter-uniquifier" style="font-weight: 200; font-style: italic;">FULL Model</h5>
+            <p class="inter-uniquifier" style="font-weight: 200;">
+                The FULL mode used a longer, more thorough training process — scaled down from 1000 to 375 episodes after repeated crashes. Average rewards rose from -679 early on to -31 later, a change of +647. Exploration decreased at a faster rate than in FAST mode, loss was lower thanks to a smaller learning rate and larger batch size, and steps per episode plateaued around episode 100 at under 25 steps on average.
+            </p>
+
+            <h5 class="inter-uniquifier" style="font-weight: 200; font-style: italic;">Hyperparameter Experiments</h5>
+            <p class="inter-uniquifier" style="font-weight: 200;">
+                <u>Learning rate 0.0005, batch size 64:</u> at 200 episodes, results resembled FAST mode but showed a larger gap between early and late rewards, and losses staying well under 0.25 — suggesting the model learned successful decisions despite still-negative rewards.
+            </p>
+            <p class="inter-uniquifier" style="font-weight: 200;">
+                <u>50 episodes, gamma 0.5, batch size 16, buffer size 1000, learning rate 0.005, epsilon decay 0.5:</u> rewards rose from -161 to 108 (+58), with losses near zero due to minimal exploration. The lower gamma pushed the model toward short-term decisions, while the small buffer and fast epsilon decay led to overfitting — the model found decent routes quickly but plateaued rather than continuing to improve.
+            </p>
+        </div>
+    </div>
+    <div>
+
+    </div>
+
+    <div class="section report-body">
+        <h3 class="inter-uniquifier" style="font-weight: 300;"> Future Enhancements </h3>
+        <p class="inter-uniquifier" style="font-weight: 200;">
+            If we did this project again, we would adjust hyperparameters one at a time — learning rate, gamma, epsilon decay, batch size — to improve training stability and isolate each one's impact. We'd also increase training time with more episodes, better computing power, and model checkpointing to see whether performance continues improving or plateaus like the FULL mode did. Finally, we'd consider complicating the neural network itself, such as adding dropout layers or more hidden units, to help the model learn more stable Q-values.
+        </p>
+    </div>
+
+    <div class="section report-body">
+        <h3 class="inter-uniquifier" style="font-weight: 300;"> Risks </h3>
+        <p class="inter-uniquifier" style="font-weight: 200;">
+            Deep Q-Learning carries risks beyond those of supervised learning. The Bellman equation and Q-value estimation can overestimate value in continuous environments, and unstable replay buffers or targets can cause overfitting or divergence as the model grows. Balancing exploration and exploitation through the epsilon-greedy strategy is difficult to tune well, and the model remains sensitive to hyperparameter changes, shifts in the training environment, or the introduction of new states — any of which can cause it to "forget" prior learning. There's also the risk of the model exploiting loopholes in the reward structure rather than learning the intended behavior, if that structure isn't specific enough.
+        </p>
+    </div>
+
+    <div class="section report-body">
+        <h3 class="inter-uniquifier" style="font-weight: 300;"> AI Acknowledgements </h3>
+        <p class="inter-uniquifier" style="font-weight: 200;">
+            <strong>Initial code (Claude):</strong> used to summarize project scope, break down concepts like the Bellman equation, and assist with debugging when the model wasn't running continuously.
+        </p>
+    </div>
+
+    <div id="footer">
+        <p> &copy; 2025 Emaan Khan | efkhan@usc.edu |
+            <a href="https://www.linkedin.com/in/emaankhan-/" target="_blank" rel="noopener noreferrer" class="linkedin-btn" style="font-size:20px; color:black; padding:3px; margin-top:5px;">
+            <i class="fa fa-linkedin-square"></i>
+            </a>
+        </p>
+    </div>
+
 </body>
+<script>
+const slideIndexes = {};
+
+document.querySelectorAll('.slideshow-container').forEach(container => {
+    slideIndexes[container.id] = 1;
+    showSlides(container.id, 1);
+});
+
+function plusSlides(el, n) {
+    const container = el.closest('.slideshow-container');
+    showSlides(container.id, slideIndexes[container.id] += n);
+}
+
+function showSlides(containerId, n) {
+    const container = document.getElementById(containerId);
+    const slides = container.getElementsByClassName("slide");
+    if (n > slides.length) { slideIndexes[containerId] = 1; n = 1; }
+    if (n < 1) { slideIndexes[containerId] = slides.length; n = slides.length; }
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[n - 1].style.display = "block";
+}
+</script>
+</body>
+
 </html>
