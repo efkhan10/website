@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Hestia</title>
-    <meta name="description" content="hestia project page covering my skills, experience, and execution of the project with supporting images">
+    <title>Projects | AI Neural Network</title>
+    <meta name="description" content="AI neural network project page covering my skills, experience, and execution of the project with supporting images">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
@@ -46,24 +46,15 @@
     }
     #header {                          
         background-color: white;  
-        height: 50px;
+        min-height: 50px;
         background-size: cover;
         padding-top: 5px;
 		padding-bottom: 80px;                      
         text-align: center;                    
         color: #EBA6A6;                             
     }
-    .overview{  
-        margin: 50px auto;   
-        width: 900px;
-        display: flex;
-        flex-wrap: wrap; 
-        gap: 50px;  
-        justify-content: center;
-    }
-    .overview-item{
-        display: flex;
-        flex-direction: column;
+    .overview {
+        grid-template-columns: repeat(5, 1fr);
     }
     h5{
         margin-bottom: 0px;
@@ -154,7 +145,10 @@
         to {opacity: 1}
     }
     @media (max-width: 1024px) {
-    .overview {
+    #header{
+        padding-bottom: 0;
+    }
+        .overview {
         width: 90%;
     }
     .section {
@@ -218,26 +212,23 @@
     </div>
 
     <div id="header">
-        <p> <h1 class="syne-uniquifier" > applied neural networks </h1> 
-        <small><em>Deep Q-Learning agent trained to solve the Taxi-v3 environment, with an interactive HTML dashboard to visualize training performance</em></small></p>
+        <h1 class="syne-uniquifier" > applied neural networks </h1> 
+       <p> <small><em>Deep Q-Learning agent trained to solve the Taxi-v3 environment, with an interactive HTML dashboard to visualize training performance</em></small></p>
     </div>
 
     <div class="overview">
         <div class="overview-item">
-            <h5>Team:</h5>
-            <ul style="list-style-type: none;font-size: 12px;padding-left: 0px;">
-                <li>Emaan Khan</li>
-                <li>Hannah Stettler</li>
-                <li>Katie Crimmins</li>
+            <h5>Team & Role:</h5>
+            <ul class="overview-list">
+                <li>Emaan Khan, Katie Crimmins, &, Hannah Stettler</li>
+                <li>Lead Programmer</li>
+                <li>Writer</li>
             </ul>
         </div>
-        <div class="overview-item">
-            <h5>Date:</h5>
-            <p><small>December 2025</small></p>
-        </div>
+     
         <div class="overview-item">
             <h5>Course:</h5>
-            <ul style="list-style-type: none;font-size: 12px;padding-left: 0px;">
+            <ul class="overview-list">
                 <li>TAC 359</li>
                 <li>Applied Neural Networks</li>
                 <li>Professor Prescher</li>
@@ -245,7 +236,7 @@
         </div>
         <div class="overview-item">
             <h5>Skills:</h5>
-            <ul style="list-style-type: none;font-size: 12px;padding-left: 0px;">
+            <ul class="overview-list">
                 <li>Reinforcement Learning</li>
                 <li>Neural Network Design</li>
                 <li>Data Visualization</li>
@@ -254,12 +245,16 @@
         </div>
         <div class="overview-item">
             <h5>Tools:</h5>
-            <ul style="list-style-type: none;font-size: 12px;padding-left: 0px;">
+            <ul class="overview-chips">
                 <li>Python</li>
                 <li>Keras / TensorFlow</li>
                 <li>Gym (Taxi-v3)</li>
                 <li>Plotly.js</li>
             </ul>
+        </div>
+        <div class="overview-item">
+            <h5>Date:</h5>
+            <p><small>December 2025</small></p>
         </div>
     </div>
 

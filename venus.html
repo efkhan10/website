@@ -46,15 +46,7 @@
         color: #EBA6A6;                             
     }
     .overview{  
-        margin: 50px auto;   
-        width: 600px;
-        display: flex;
-        flex-wrap: wrap; 
-        gap: 50px;  
-    }
-    .overview-item{
-        display: flex;
-        flex-direction: column;
+        margin-left: 125px;   
     }
     h5{
         margin-bottom: 0px;
@@ -147,17 +139,28 @@
         from {opacity: .4}
         to {opacity: 1}
     }
-    @media (max-width: 1024px) {
+    
+@media (max-width: 1024px) {
     .overview {
         width: 90%;
-        margin: 50px auto;
     }
     .two-col {
         width: 90%;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        gap: 24px;
+    }
+    .two-col .section {
+        width: 90%;
+        flex: 1 1 0;          
+        min-width: 0;  
+        margin-bottom: 0;
+        margin-top: 0px;
     }
     video, audio {
         width: 100%;
+        max-width: 100%;
+        height:auto;
     }
 }
 
@@ -209,20 +212,19 @@
     </div>
     <div class="overview">
         <div class="overview-item">
-            <h5>Role:</h5>
-            <ul style="list-style-type: none;font-size: 12px;padding-left: 0px;">
-            <li>Team Leader</li>
-            <li>Interface Designer</li>
-            <li>Technical AR/AI Research</li>
-            <li>Market Researcher</li>
+            <h5>Team & Role:</h5>
+            <ul class="overview-list">
+                 <li><em>Team of 6</em></li>
+                <li>Team Leader</li>
+                <li>Interface Designer</li>
+                <li>Technical AR/AI Research</li>
+                <li>Market Researcher</li>
+            </ul>
         </div>
-        <div class="overview-item">
-            <h5>Date:</h5>
-            <p><small>Fall 2023</small></p>
-        </div>
+      
         <div class="overview-item">
             <h5>Skills:</h5>
-            <ul style="list-style-type: none;font-size: 12px;padding-left: 0px;">
+            <ul class="overview-list">
                 <li>Product Ideation</li>
                 <li>Design Process</li>
                 <li>Prototyping</li>
@@ -230,13 +232,15 @@
             </ul>
         </div>
         <div class="overview-item">
-            <h5>Tools:</h5>
-            <p><small>Figma</small></p>
-        </div>
+           <h5>Tools:</h5>
+            <ul class="overview-chips">
+                <li>Figma</li>
+            <ul>
+        </div> 
         <div class="overview-item">
-            <h5>Team:</h5>
-            <p><small>6 </small></p>
-        </div>  
+            <h5>Date:</h5>
+            <p><small>Fall 2023</small></p>
+        </div>
     </div>
     <div class="two-col">
         <div class="section">
