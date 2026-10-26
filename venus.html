@@ -45,9 +45,7 @@
         text-align: center;                    
         color: #EBA6A6;                             
     }
-    .overview{  
-        margin-left: 125px;   
-    }
+    
     h5{
         margin-bottom: 0px;
     }
@@ -55,6 +53,13 @@
         text-align: center;
     }
     .two-col {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        margin: 0 auto 40px;
+        width: 1000px;
+    }
+    .two-col-big {
         display: flex;
         justify-content: space-between;
         gap: 40px;
@@ -141,57 +146,110 @@
     }
     
 @media (max-width: 1024px) {
-    .overview {
-        width: 90%;
-    }
     .two-col {
         width: 90%;
         flex-wrap: nowrap;
         align-items: flex-start;
-        gap: 24px;
+        gap: 30px;
     }
     .two-col .section {
         width: 90%;
         flex: 1 1 0;          
         min-width: 0;  
         margin-bottom: 0;
-        margin-top: 0px;
+        margin-top: 5px;
+        margin-left: 80px;
+    }
+    .two-col .section p {
+        margin-top: 50px;
     }
     video, audio {
-        width: 100%;
+        width: 75%;
         max-width: 100%;
         height:auto;
     }
+    .two-col-big {
+        width: 90%;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        gap: 30px;
+    }
+    .two-col-big .section {
+        width: 90%;
+        flex: 1 1 0;          
+        min-width: 0;  
+        margin-bottom: 0;
+        margin-top: 5px;
+        margin-left: 30px;
+    }
+    images {
+        width: 75%;
+        height: auto;
+    }
+    .slideshow-container {
+        width: 80%;
+        margin-top: 20px;
+    }
+    
 }
 
 @media (max-width: 767px) {
-    .syne-uniquifier {
-        font-size: 35px;
+    .syne-uniquifier { font-size: 35px; }
+    .overview { width: 90%; }
+
+    .two-col{
+        width: 92%;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        gap: 12px;
     }
-    .overview {
-        width: 90%;
-        gap: 25px;
-        justify-content: center;
+    .two-col .section{
+        width: auto;
+        flex: 1 1 0;
+        min-width: 0;
+        margin: 0;
     }
-    .two-col {
-        flex-direction: column;
-        width: 90%;
-        gap: 20px;
+    .two-col p{
+        font-size: 12px;
+        line-height: 1.5;
+        margin-top: 0;
+        margin-bottom: 10px;
     }
-    .section img {
+    .two-col video {
         width: 100% !important;
         max-width: 100%;
+        height: auto;
+        margin-top: 50px;
     }
-    .container {
-        padding: 15px;
+
+    .two-col-big {
+        flex-direction: column;
+        align-items: center;
+        width: 92%;
+        gap: 16px;
     }
-    .slideshow-container {
-        max-width: 100%;
+    .two-col-big .section {
+        width: 100%;
+        flex: none;
+        margin: 0;
+        text-align: center;
     }
-    .prev, .next {
-        padding: 10px;
+    .two-col-big .section img {
+        display: block;
+        width: 70% !important;
+        max-width: 300px;
+        height: auto;
+        margin: 0 auto;
+    }
+    .two-col-big .section p {
         font-size: 14px;
+        line-height: 1.6;
+        margin: 0 0 12px;
     }
+
+    .container { padding: 15px; }
+    .slideshow-container { max-width: 100%; width: 100%; }
+    .prev, .next { padding: 10px; font-size: 14px; }
 }
     </style>
 </head>
@@ -217,8 +275,8 @@
                  <li><em>Team of 6</em></li>
                 <li>Team Leader</li>
                 <li>Interface Designer</li>
-                <li>Technical AR/AI Research</li>
                 <li>Market Researcher</li>
+                <li>Technical Researcher</li>
             </ul>
         </div>
       
@@ -228,18 +286,25 @@
                 <li>Product Ideation</li>
                 <li>Design Process</li>
                 <li>Prototyping</li>
-                <li>Market Strategy</li>                         
+                <li>Market Strategy</li> 
+                <li>Technical AR/AI Research</li>
+                        
             </ul>
         </div>
         <div class="overview-item">
            <h5>Tools:</h5>
             <ul class="overview-chips">
                 <li>Figma</li>
+                <li>Adobe Suite</li>
+                <li>Canva</li>
+                <li>Woodworking</li>
             <ul>
         </div> 
         <div class="overview-item">
             <h5>Date:</h5>
-            <p><small>Fall 2023</small></p>
+            <ul class="overview-list">
+                <li>Fall 2023</li>
+            </ul>
         </div>
     </div>
     <div class="two-col">
@@ -253,7 +318,7 @@
         </div>
     </div>
 
-    <div class="two-col">
+    <div class="two-col-big">
         <div class="section">
             <img src="projectimages/venus/venusimage.png" alt="Venus Image" style="width:400px; display:block; margin-left: auto; margin-right: auto">
         </div>

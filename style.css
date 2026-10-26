@@ -58,13 +58,12 @@ body {
 .overview {
     font-family: "Inter", sans-serif;
     margin: 50px auto;
-    width: 100%;
+    width: 90%;
     max-width: 900px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, auto);
     gap: 10px 20px;
-    padding: 10px 0;
-    margin-left: 125px;   
+    padding: 10px 0;  
     justify-content: center;              
     /*border-top: 1px solid #e4ded2;
     border-bottom: 1px solid #e4ded2;*/
@@ -109,11 +108,51 @@ body {
     padding-top: 0px;
 }
 .overview-chips li {
-    padding: 3px 11px;
+    padding: 3px 5px;
     font-size: 12px;
     border-radius: 999px;
     background: #efe8d8;
     color: #3a362e;
+}
+
+@media (min-width: 1200px) {
+    body .overview,
+    body .two-col,
+    body .two-col-big,
+    body .two-col-hero,
+    body .slideshow-container {
+        width: min(92%, 1100px);
+        max-width: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    body .two-col,
+    body .two-col-big,
+    body .two-col-hero {
+        gap: 60px;
+        align-items: center;
+        margin-top: 40px;
+        margin-bottom: 60px;
+    }
+
+    body .two-col .section,
+    body .two-col-big .section,
+    body .two-col-hero .section {
+        flex: 1 1 0;
+        width: auto;
+        min-width: 0;
+        margin: 0;
+    }
+
+    body .two-col img,
+    body .two-col-big img,
+    body .two-col-hero img,
+    body .two-col video,
+    body .two-col-big video {
+        max-width: 100%;
+        height: auto;
+    }
 }
    
 @media (max-width: 1024px) {
@@ -124,21 +163,49 @@ body {
 @media (max-width: 767px) {
     #navbar {
         padding: 0 15px;
-        height: auto;
-        min-height: 60px;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        height: 50px;
+        min-height: 50px;
+        justify-content: space-between;
+        gap: 15px;
+        height: 60px;
     }
 
     #navbar a {
         margin-left: 0;
-        font-size: 13px;
+        font-size: 8px;
     }
 }
-@media (max-width: 600px) {
-    .overview { grid-template-columns: 1fr; }
+
+@media (max-width: 1024px) {
+    .overview {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+        width: 100%;
+        margin: 45px 145px;
+    }
     .overview-item--wide { grid-column: auto; }
+
+    .overview-item h5 { font-size: 10px; letter-spacing: 0.05em; }
+    .overview-list,
+    .overview-chips li { font-size: 10px; }
+    .overview-chips { gap: 4px; }
+    .overview-chips li { padding: 10px 10px; }
+    .overview-item p { font-size: 10px; }
+}
+
+@media (max-width: 767px) {
+    .overview {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+        width: 100%;
+        margin: 15px 35px;
+    }
+    .overview-item--wide { grid-column: auto; }
+
+    .overview-item h5 { font-size: 5px; letter-spacing: 0.05em; }
+    .overview-list,
+    .overview-chips li { font-size: 7px; }
+    .overview-chips { gap: 4px; }
+    .overview-chips li { padding: 2px 5px; }
+    .overview-item p { font-size: 5px; }
 }
