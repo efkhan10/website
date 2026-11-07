@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="venus project page covering my skills, experience, and execution of the project with supporting images">
+    <title>Projects | Venus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+    .syne-uniquifier {
+        font-family: "Syne", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 800;
+        font-style: normal;
+        font-size: 60px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
+
+    .inter-uniquifier {
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: white;  
+        /*background-color:#feefc3;;*/
+        line-height: 1.6;
+        color: black;
+    }
+    #header {                          
+        background-color: white;  
+        height: 50px;
+        background-size: cover;
+        padding-top: 5px;
+		padding-bottom: 80px;                      
+        text-align: center;                    
+        color: #EBA6A6;                             
+    }
+    
+    h5{
+        margin-bottom: 0px;
+    }
+    h3{
+        text-align: center;
+    }
+    .two-col {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        margin: 0 auto 40px;
+        width: 1000px;
+    }
+    .two-col-big {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        margin: 0 auto 40px;
+        width: 1000px;
+    }
+    .section {
+		margin: auto;
+	}
+
+    .container{
+        margin: 0;
+        padding: 40px;
+    }
+	video,
+		audio {
+			max-width: 100%;
+            width: 800px;
+		}
+
+	iframe {
+		width: 100%;
+		height: 500px;
+	}
+    #footer {
+        margin: 0;
+        background-color: white;
+        background-size: cover;
+        text-align: center;
+        font-size: 0.8em;
+        padding-bottom: 20px;
+        padding-top: 10px;
+    }
+    .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+    }
+
+    .slide {
+        display: none;
+
+    }
+    .slide img {
+        width: 100%;
+        height: auto;
+    }
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: black;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
+    .slidenum {
+        color: black;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+        right:0;
+    }
+    .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+    @keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+    }
+    
+@media (max-width: 1024px) {
+    .two-col {
+        width: 90%;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        gap: 30px;
+    }
+    .two-col .section {
+        width: 90%;
+        flex: 1 1 0;          
+        min-width: 0;  
+        margin-bottom: 0;
+        margin-top: 5px;
+        margin-left: 80px;
+    }
+    .two-col .section p {
+        margin-top: 50px;
+    }
+    video, audio {
+        width: 75%;
+        max-width: 100%;
+        height:auto;
+    }
+    .two-col-big {
+        width: 90%;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        gap: 30px;
+    }
+    .two-col-big .section {
+        width: 90%;
+        flex: 1 1 0;          
+        min-width: 0;  
+        margin-bottom: 0;
+        margin-top: 5px;
+        margin-left: 30px;
+    }
+    images {
+        width: 75%;
+        height: auto;
+    }
+    .slideshow-container {
+        width: 80%;
+        margin-top: 20px;
+    }
+    
+}
+
+@media (max-width: 767px) {
+    .syne-uniquifier { font-size: 35px; }
+    .overview { width: 90%; }
+
+    .two-col{
+        width: 92%;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    .two-col .section{
+        width: auto;
+        flex: 1 1 0;
+        min-width: 0;
+        margin: 0;
+    }
+    .two-col p{
+        font-size: 12px;
+        line-height: 1.5;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    .two-col video {
+        width: 100% !important;
+        max-width: 100%;
+        height: auto;
+        margin-top: 50px;
+    }
+
+    .two-col-big {
+        flex-direction: column;
+        align-items: center;
+        width: 92%;
+        gap: 16px;
+    }
+    .two-col-big .section {
+        width: 100%;
+        flex: none;
+        margin: 0;
+        text-align: center;
+    }
+    .two-col-big .section img {
+        display: block;
+        width: 70% !important;
+        max-width: 300px;
+        height: auto;
+        margin: 0 auto;
+    }
+    .two-col-big .section p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin: 0 0 12px;
+    }
+
+    .container { padding: 15px; }
+    .slideshow-container { max-width: 100%; width: 100%; }
+    .prev, .next { padding: 10px; font-size: 14px; }
+}
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <a href="index.html">emaan khan</a>
+        <div>
+            <a href="index.html" class="active">Work</a>
+            <a href="resume.html">Resume</a>
+            <a href="aboutme.html">About</a>
+            <a href="mailto:efkhan@usc.edu">Email</a>
+        </div>
+    </div>
+
+    <div id="header">
+        <h1 class="syne-uniquifier" >  venus </h1>
+         <small><em>A 2 month long project aimed at solving a problem, creating business & marketing strategies, and creating low-fidelity products.</em></small></p>
+    </div>
+    <div class="overview">
+        <div class="overview-item">
+            <h5>Team & Role:</h5>
+            <ul class="overview-list">
+                 <li><em>Team of 6</em></li>
+                <li>Team Leader</li>
+                <li>Interface Designer</li>
+                <li>Market Researcher</li>
+                <li>Technical Researcher</li>
+            </ul>
+        </div>
+      
+        <div class="overview-item">
+            <h5>Skills:</h5>
+            <ul class="overview-list">
+                <li>Product Ideation</li>
+                <li>Design Process</li>
+                <li>Prototyping</li>
+                <li>Market Strategy</li> 
+                <li>Technical AR/AI Research</li>
+                        
+            </ul>
+        </div>
+        <div class="overview-item">
+           <h5>Tools:</h5>
+            <ul class="overview-chips">
+                <li>Figma</li>
+                <li>Adobe Suite</li>
+                <li>Canva</li>
+                <li>Woodworking</li>
+            <ul>
+        </div> 
+        <div class="overview-item">
+            <h5>Date:</h5>
+            <ul class="overview-list">
+                <li>Fall 2023</li>
+            </ul>
+        </div>
+    </div>
+    <div class="two-col">
+        <div class="section">
+            <p class="inter-uniquifier" style="font-weight: 100; font-style: italic;"> Venus is a smart mirror paired with an app that allows you to try on clothes virtually  equipped with advanced technology that assists users in selecting the perfect outfit for specific events, weather conditions, and situations. The mirror employs artificial intelligence and machine learning algorithms to analyze various factors and provide personalized outfit recommendations. The mirror is paired with an app to further specify your choices. </p>
+        </div>
+        <div class="section">
+            <video autoplay muted controls loop>
+                <source src="projectimages/venus/Venus.mp4" style="width: 500px;"> /* doesnt load and im not sure why because the path is correct */
+		    </video>
+        </div>
+    </div>
+
+    <div class="two-col-big">
+        <div class="section">
+            <img src="projectimages/venus/venusimage.png" alt="Venus Image" style="width:400px; display:block; margin-left: auto; margin-right: auto">
+        </div>
+        <div class="section">
+            <p class="inter-uniquifier" style="font-weight: 200;" > For my Final Project, I collaborated in a team of 4 to develop product: Venus, a smart mirror that helps users select personalized outfits based on weather, events, and personal style. The project combined fashion, AI, and augmented reality to simplify and elevate the daily routine of getting dressed.
+            </p>
+            <p class="inter-uniquifier" style="font-weight: 200;"> I contributed to the technology implementation, app interface design, and documentation, helping integrate AI algorithms with AR to provide real-time outfit recommendations. The mirror also tracks user preferences over time to refine its suggestions, offering a truly personalized experience.
+            As part of the project, we developed a functional prototype, complete with a companion app that allows users to manage their wardrobe, virtually try on clothes, and receive styling insights. We also explored branding, business strategy, and marketing, envisioning partnerships with fashion retailers like Zara and influencer campaigns to introduce the product to early adopters.
+            </p>
+            <p class="inter-uniquifier" style="font-weight: 200;">
+            The result is a future-forward fashion technology, bridging everyday usability with cutting-edge AR and AI, making style effortless and interactive for a wide audience.
+            </p>
+        </div>
+
+    </div>
+    <div class="container">
+        <h3 class="inter-uniquifier" style="font-weight: 200;"> Product Cycle Presentation & Pitch</h3>
+        <div class="slideshow-container">
+            <div class="slide"> 
+                <div class="slidenum">1 / 24</div>
+                <img src="P5_Venus/1.jpg" alt="Slide 1">
+            </div>
+            <div class="slide"> 
+                <div class="slidenum">2 / 24</div>
+                <img src="P5_Venus/3.jpg" alt="Slide 2">
+            </div>
+            <div class="slide"> 
+                <div class="slidenum">3 / 24</div>
+                <img src="P5_Venus/4.jpg" alt="Slide 3">
+            </div>  
+             <div class="slide"> 
+                <div class="slidenum">4 / 24</div>
+                <img src="P5_Venus/5.jpg" alt="Slide 4">
+            </div>  
+             <div class="slide"> 
+                <div class="slidenum">5 / 24</div>
+                <img src="P5_Venus/6.jpg" alt="Slide 5">
+            </div>  
+             <div class="slide"> 
+                <div class="slidenum">6 / 24</div>
+                <img src="P5_Venus/7.jpg" alt="Slide 6">
+            </div>  
+            <div class="slide"> 
+                <div class="slidenum">7 / 24</div>
+                <img src="P5_Venus/8.jpg" alt="Slide 7">        
+            </div>
+            <div class="slide"> 
+                <div class="slidenum">8 / 24</div>
+                <img src="P5_Venus/9.jpg" alt="Slide 8">
+            </div>  
+             <div class="slide"> 
+                <div class="slidenum">9 / 24</div>
+                <img src="P5_Venus/10.jpg" alt="Slide 9">
+            </div>
+            <div class="slide"> 
+                <div class="slidenum">10 / 24</div>
+                <img src="P5_Venus/11.jpg" alt="Slide 10">  
+            </div>
+            <div class="slide"> 
+                <div class="slidenum">11 / 24</div>
+                <img src="P5_Venus/12.jpg" alt="Slide 11">  
+            </div>
+            <div class="slide"> 
+                <div class="slidenum">12 / 24</div>
+                <img src="P5_Venus/13.jpg" alt="Slide 12">  
+            </div>
+            <div class="slide"> 
+                <div class="slidenum">13 / 24</div>
+                <img src="P5_Venus/14.jpg" alt="Slide 13">  
+            </div>
+            <div class="slide"> 
+                <div class="slidenum">14 / 24</div>
+                <img src="P5_Venus/15.jpg" alt="Slide 14">  
+            </div>
+            <div class="slide"> 
+                <div class="slidenum">15 / 24</div>
+                <img src="P5_Venus/16.jpg" alt="Slide 15">  
+            </div>
+            <div class="slide"> 
+                <div class="slidenum">16 / 24</div>
+                <img src="P5_Venus/17.jpg" alt="Slide 16">  
+            </div>
+            <div class="slide"> 
+                <div class="slidenum">17 / 24</div>
+                <img src="P5_Venus/18.jpg" alt="Slide 17">  
+            </div>
+            <div class="slide"> 
+                <div class="slidenum">18 / 24</div>
+                <img src="P5_Venus/19.jpg" alt="Slide 18">  
+            </div>
+            <div class="slide"> 
+                <div class="slidenum">19 / 24</div>
+                <img src="P5_Venus/20.jpg" alt="Slide 19">  
+            </div>
+            <div class="slide"> 
+                <div class="slidenum">20 / 24</div>
+                <img src="P5_Venus/21.jpg" alt="Slide 20">  
+            </div>
+            <div class="slide"> 
+                <div class="slidenum">21 / 24</div>
+                <img src="P5_Venus/22.jpg" alt="Slide 21">  
+            </div>
+            <div class="slide"> 
+                <div class="slidenum">22 / 24</div>
+                <img src="P5_Venus/23.jpg" alt="Slide 22">  
+            </div>
+            <div class="slide"> 
+                <div class="slidenum">23 / 24</div>
+                <img src="P5_Venus/24.jpg" alt="Slide 23">  
+            </div>
+            <div class="slide"> 
+                <div class="slidenum">24 / 24</div>
+                <img src="P5_Venus/25.jpg" alt="Slide 24">  
+            </div>  
+            
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+
+        
+
+	</div> 
+    <div id="footer">
+        <p> &copy; 2025 Emaan Khan | efkhan@usc.edu | 
+            <a href="https://www.linkedin.com/in/emaankhan-/" target="_blank" rel="noopener noreferrer" class="linkedin-btn" style="font-size:20px; color:black; padding:3px; margin-top:5px;">
+            <i class="fa fa-linkedin-square"></i>
+            </a>
+        </p>
+    </div>
+
+    <!-- Slideshow HTML goes here -->
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+  const slides = document.getElementsByClassName("slide");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex - 1].style.display = "block";
+}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+<!-- ============================================================
+  VENUS PROCESS SECTION
+  1. Paste the <style> block into your existing <style> tag
+  2. Paste the HTML where the "Final Project" two-col-big block ends,
+     and move your slideshow container into Stage 7 (marked below)
+  3. Swap every projectimages/venus/process/... path for your real images
+============================================================ -->
+
+<style>
+/* ---------- Process section ---------- */
+html { scroll-behavior: smooth; }
+
+.process {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 40px 40px;
+    position: relative;
+}
+.process-intro {
+    text-align: center;
+    max-width: 640px;
+    margin: 30px auto 50px;
+    font-weight: 200;
+}
+
+/* each stage is a card */
+.stage {
+    background: #fff;
+    border: 1px solid #ececec;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+    padding: 30px 32px;
+    margin-bottom: 28px;
+    scroll-margin-top: 70px;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.stage:hover {
+    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.10);
+    transform: translateY(-2px);
+}
+.stepper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 10px;
+    margin: 0 0 14px;
+    font-family: "Syne", sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 1.2;
+}
+.stepper a { color: #c9c9c9; text-decoration: none; }
+.stepper a.on { color: #EBA6A6; }
+.stepper .arrow { color: #c9c9c9; font-weight: 400; }
+
+.stage-question {
+    font-style: italic;
+    font-weight: 200;
+    margin: 0 0 20px;
+}
+.stage-body {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+.stage-text { flex: 1 1 0; min-width: 0; }
+.stage-text p { margin: 0 0 12px; font-weight: 200; }
+.stage-visual { flex: 1 1 0; min-width: 0; }
+.stage-visual img { width: 100%; height: auto; display: block; }
+.stage-visual figcaption { font-size: 12px; opacity: 0.6; margin-top: 6px; }
+.stage-visual { margin: 0; }
+
+.stage-changed {
+    background: #fdeeee;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-top: 16px;
+    font-weight: 400 !important;
+}
+.stage-changed span {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+.chips { list-style: none; padding: 0; margin: 0 0 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+.chips li {
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    padding: 3px 12px;
+    font-size: 13px;
+}
+.chips li.picked { background: #EBA6A6; color: #3a1a1a; border-color: #EBA6A6; }
+
+.pullquote {
+    font-family: "Syne", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.35;
+    margin: 18px 0 0;
+}
+
+.swatches { display: flex; gap: 8px; margin-top: 12px; }
+.swatches span { width: 36px; height: 36px; border-radius: 50%; border: 1px solid #ddd; }
+
+.fail-pair { display: flex; gap: 12px; }
+.fail-pair figure { margin: 0; flex: 1; }
+
+/* sub blocks inside a card */
+.sub-label {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin: 28px 0 10px;
+}
+.heard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+}
+.heard div {
+    background: #fdeeee;
+    border-radius: 12px;
+    padding: 14px 16px;
+}
+.heard strong {
+    display: block;
+    font-family: "Syne", sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+.heard small { font-size: 12px; opacity: 0.75; }
+.heard-note { font-size: 13px; opacity: 0.7; margin: 10px 0 0; }
+
+.feature-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 10px;
+}
+.feature-grid li {
+    background: #fdeeee;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 14px;
+}
+
+.tech-pair { display: flex; gap: 20px; align-items: flex-start; }
+.tech-pair figure { margin: 0; flex: 1; min-width: 0; }
+.tech-pair img { width: 100%; height: auto; display: block; border: 1px solid #eee; border-radius: 10px; }
+.tech-pair figcaption { font-size: 13px; margin-top: 8px; }
+
+@media (max-width: 767px) {
+    .process { padding: 20px 15px 30px; }
+    .stage { padding: 22px 18px; }
+    .stepper { font-size: 16px; gap: 2px 6px; }
+    .stage-body { flex-direction: column; gap: 20px; }
+    .fail-pair, .tech-pair { flex-direction: column; }
+}
+</style>
+
+<section class="process inter-uniquifier">
+    <p class="process-intro">Venus took seven stages to get from a blank page to a pitch. Each one started with a question, ended with something we had to change, and left behind work you can see below.</p>
+
+    <!-- 1 -->
+    <article class="stage" id="define">
+        <div class="stepper">
+            <a href="#define" class="on">define</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#ideate">ideate</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#brand">brand</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#make">make</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#build">build</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#evaluate">evaluate</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#pitch">pitch</a>
+        </div>
+        <p class="stage-question">What in the home is actually worth solving?</p>
+        <div class="stage-body">
+            <div class="stage-text">
+                <p>We started by asking what society even counts as a household. Existing solutions ranged from smart stoves and fridges to solar panels and water purifiers, which left far too much space to solve for. We picked five segments to study and interviewed peers about the solutions they wanted.</p>
+                <ul class="chips">
+                    <li>Sustainability</li>
+                    <li>Augmented Reality</li>
+                    <li>Solar Energy</li>
+                    <li>Product Lifespans</li>
+                    <li>Accessibility</li>
+                </ul>
+                <p class="stage-changed"><span>What changed</span>A huge space became one problem statement.</p>
+            </div>
+            <figure class="stage-visual">
+                <img src="projectimages/venus/process/define.jpg" alt="Research notes and interview snippets">
+                <figcaption>Research notes and peer interviews</figcaption>
+            </figure>
+        </div>
+        <p class="pullquote">How might we simplify and enhance the way individuals move and interact within their homes using sustainable, high tech solutions like AI and AR to support daily activities?</p>
+
+        <p class="sub-label">What we heard in one peer interview</p>
+        <div class="heard">
+            <div><strong>2/10</strong><small>values sustainability at home</small></div>
+            <div><strong>9/10</strong><small>values ease at home</small></div>
+            <div><strong>5/10</strong><small>fear of tech in the home</small></div>
+            <div><strong>Yes</strong><small>open to an AR experience</small></div>
+        </div>
+        <p class="heard-note">Machine learning was welcome for the kitchen and closet, but not for safety or external household processes. The biggest thing they wanted to improve was deciding what to wear, followed by meal prepping, from grocery shopping to cooking, including calorie intake.</p>
+    </article>
+
+    <!-- 2 -->
+    <article class="stage" id="ideate">
+        <div class="stepper">
+            <a href="#define">define</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#ideate" class="on">ideate</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#brand">brand</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#make">make</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#build">build</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#evaluate">evaluate</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#pitch">pitch</a>
+        </div>
+        <p class="stage-question">Which idea deserves to be built?</p>
+        <div class="stage-body">
+            <div class="stage-text">
+                <p>We mind mapped, rapidly ideated, and brain dumped, working alone and together, until we had eight ideas that fit the problem statement.</p>
+                <ul class="chips">
+                    <li>Recycling assistant</li>
+                    <li>Chore gamification</li>
+                    <li>Interior design simulator</li>
+                    <li class="picked">AI/AR mirror</li>
+                    <li>+ 4 more</li>
+                </ul>
+                <p>To keep our own bias out of the choice, we explained each feasible idea to peers, answered their questions about viability, and let them tell us which they would actually prefer.</p>
+                <p class="stage-changed"><span>What changed</span>The mirror won. It could dress users, plan outfits, teach styling, and connect them with brands, and it solved for the most people.</p>
+            </div>
+            <figure class="stage-visual">
+                <img src="projectimages/venus/process/ideate.jpg" alt="Mind map and brain dump">
+                <figcaption>Mind map and brain dump</figcaption>
+            </figure>
+        </div>
+    </article>
+
+    <!-- 3 -->
+    <article class="stage" id="brand">
+        <div class="stepper">
+            <a href="#define">define</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#ideate">ideate</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#brand" class="on">brand</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#make">make</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#build">build</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#evaluate">evaluate</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#pitch">pitch</a>
+        </div>
+        <p class="stage-question">What should Venus feel like?</p>
+        <div class="stage-body">
+            <div class="stage-text">
+                <p>Moodboards pulled us in every direction: elegant, playful, neutral, sophisticated, childlike, feminine, masculine. We chose neutral, sophisticated, and elegant to signal a high quality product, with maroon as the accent against black, gray, and white.</p>
+                <div class="swatches" aria-label="Brand colors">
+                    <span style="background:#6d1a2a"></span>
+                    <span style="background:#000"></span>
+                    <span style="background:#808080"></span>
+                    <span style="background:#fff"></span>
+                </div>
+                <p class="stage-changed"><span>What changed</span>We committed to an inclusive look that does not isolate any gender or age group.</p>
+            </div>
+            <figure class="stage-visual">
+                <img src="projectimages/venus/process/moodboard.jpg" alt="Venus moodboard">
+                <figcaption>Moodboard</figcaption>
+            </figure>
+        </div>
+    </article>
+
+    <!-- 4 -->
+    <article class="stage" id="make">
+        <div class="stepper">
+            <a href="#define">define</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#ideate">ideate</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#brand">brand</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#make" class="on">make</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#build">build</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#evaluate">evaluate</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#pitch">pitch</a>
+        </div>
+        <p class="stage-question">What does sleek and elegant actually look like in a real object?</p>
+        <div class="stage-body">
+            <div class="stage-text">
+                <p>We reached for what we knew, wood and cardboard, and both failed us. Cardboard lost its shape and was hard to reform after a bump or a fall. Wood was rigid, and that rigidity showed through the fabric, so it never felt refined.</p>
+                <p>We were balancing cost, versatility, ease, and appearance all at once, and spent a lot of time trying to force familiar materials to work.</p>
+                <p class="stage-changed"><span>What changed</span>We stopped defaulting to familiar materials and judged each option on all four factors together. The result was an elegant maroon framed mirror. <!-- add the final material here --></p>
+            </div>
+            <div class="stage-visual">
+                <div class="fail-pair">
+                    <figure>
+                        <img src="projectimages/venus/process/cardboard.jpg" alt="Cardboard prototype">
+                        <figcaption>Cardboard: lost its form</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="projectimages/venus/process/wood.jpg" alt="Wood prototype">
+                        <figcaption>Wood: too rigid</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- 5 -->
+    <article class="stage" id="build">
+        <div class="stepper">
+            <a href="#define">define</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#ideate">ideate</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#brand">brand</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#make">make</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#build" class="on">build</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#evaluate">evaluate</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#pitch">pitch</a>
+        </div>
+        <p class="stage-question">If the mirror is the face, what does the digital product do?</p>
+        <div class="stage-body">
+            <div class="stage-text">
+                <p>The mirror is the physical product, but the app does the heavy lifting. It registers a user's clothing, plans and curates outfits, tracks pieces that never get worn, and doubles as a remote control for the mirror.</p>
+                <p>On the technical side, I researched how the intelligence would work: a convolutional neural network that learns which clothing fits which events and weather, then learns each person's taste from the outfits they like. An AR layer reads the camera and overlays clothes on the user's body. Camera images are deleted after every use, a privacy decision we made early.</p>
+                <p class="stage-changed"><span>What changed</span>Each app feature was tied to a type of user: fast track for efficiency, swiping for fashion, cost per wear for sustainability.</p>
+            </div>
+            <figure class="stage-visual">
+                <img src="projectimages/venus/process/app.jpg" alt="Venus app interface">
+                <figcaption>Interface sketches to app screens</figcaption>
+            </figure>
+        </div>
+
+        <p class="sub-label">Key features</p>
+        <ul class="feature-grid">
+            <li>Recommendations based on weather</li>
+            <li>Recommendations based on calendar</li>
+            <li>Favorite outfits</li>
+            <li>Closet inventory</li>
+            <li>Cost per use calculator</li>
+            <li>Travel packing</li>
+            <li>Social network</li>
+            <li>Venus Wrapped</li>
+        </ul>
+        <!-- or drop in your Canva slide: <img src="projectimages/venus/process/key-features.png" alt="Key features slide"> -->
+
+        <p class="sub-label">Tech infrastructure</p>
+        <div class="tech-pair">
+            <figure>
+                <img src="projectimages/venus/process/tech-1.png" alt="Outfit recommendation flowchart">
+                <figcaption><strong>1. Recommendation.</strong> A CNN is trained on outfit images labeled by event and weather. It then reads the user's closet, the weather, and today's events, offers an outfit, and learns from the ones they like.</figcaption>
+            </figure>
+            <figure>
+                <img src="projectimages/venus/process/tech-2.png" alt="Body parsing and AR display flowchart">
+                <figcaption><strong>2. Try on.</strong> A model learns human parsing from 3D scans of varied bodies. The camera perceives the user, the model warps the chosen outfit from 2D to 3D using their measurements, and AR displays it.</figcaption>
+            </figure>
+        </div>
+    </article>
+
+    <!-- 6 -->
+    <article class="stage" id="evaluate">
+        <div class="stepper">
+            <a href="#define">define</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#ideate">ideate</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#brand">brand</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#make">make</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#build">build</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#evaluate" class="on">evaluate</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#pitch">pitch</a>
+        </div>
+        <p class="stage-question">Is this actually for who we think it is?</p>
+        <div class="stage-body">
+            <div class="stage-text">
+                <p>Our first persona was a high earning adult who could afford a $1500 mirror. We tested in the wild with a large survey of people with different styles and finances, plus focus group interviews that went deeper into their concerns.</p>
+                <p>We learned the market was bigger than we assumed. People as young as their late teens wanted a tool to develop their style.</p>
+                <p class="stage-changed"><span>What changed</span>We split the business model: the app as a subscription, the mirror sold separately. That let us reach younger and lower earning users without losing the high earning customer.</p>
+            </div>
+            <figure class="stage-visual">
+                <img src="projectimages/venus/process/survey.jpg" alt="Survey results">
+                <figcaption>Survey results and focus group notes</figcaption>
+            </figure>
+        </div>
+    </article>
+
+    <!-- 7 -->
+    <article class="stage" id="pitch">
+        <div class="stepper">
+            <a href="#define">define</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#ideate">ideate</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#brand">brand</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#make">make</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#build">build</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#evaluate">evaluate</a>
+            <span class="arrow">&rarr;</span>
+            <a href="#pitch" class="on">pitch</a>
+        </div>
+        <p class="stage-question">How do we turn all of this into a company someone would back?</p>
+        <div class="stage-body">
+            <div class="stage-text">
+                <p>We packaged the research, product, and business model into a pitch. The ask: $100K in exchange for 10% equity, plus introductions to fashion partners and AI and AR advisors.</p>
+            </div>
+        </div>
+    </article>
+
+    <!-- MOVE your existing <div class="container"> slideshow block here, inside the Pitch stage -->
+</section>
+
+
+
+
+/*old slideshow code, if you want to keep it for reference */
+ <div class="two-col-big">
+        <div class="section">
+            <img src="projectimages/venus/venusimage.png" alt="Venus Image" style="width:400px; display:block; margin-left: auto; margin-right: auto">
+        </div>
+        <div class="section">
+            <p class="inter-uniquifier" style="font-weight: 200;" > For my Final Project, I collaborated in a team of 4 to develop product: Venus, a smart mirror that helps users select personalized outfits based on weather, events, and personal style. The project combined fashion, AI, and augmented reality to simplify and elevate the daily routine of getting dressed.
+            </p>
+            <p class="inter-uniquifier" style="font-weight: 200;"> I contributed to the technology implementation, app interface design, and documentation, helping integrate AI algorithms with AR to provide real-time outfit recommendations. The mirror also tracks user preferences over time to refine its suggestions, offering a truly personalized experience.
+            As part of the project, we developed a functional prototype, complete with a companion app that allows users to manage their wardrobe, virtually try on clothes, and receive styling insights. We also explored branding, business strategy, and marketing, envisioning partnerships with fashion retailers like Zara and influencer campaigns to introduce the product to early adopters.
+            </p>
+            <p class="inter-uniquifier" style="font-weight: 200;">
+            The result is a future-forward fashion technology, bridging everyday usability with cutting-edge AR and AI, making style effortless and interactive for a wide audience.
+            </p>
+        </div>

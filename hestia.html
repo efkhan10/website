@@ -97,6 +97,7 @@
 
     .slide {
         display: none;
+        margin: 0 48px;
 
     }
     .slide img {
@@ -109,17 +110,17 @@
         top: 50%;
         width: auto;
         margin-top: -22px;
-        padding: 16px;
+        padding: 5px;
         color: black;
         font-weight: bold;
-        font-size: 18px;
+        font-size: 12px;
         transition: 0.6s ease;
-        border-radius: 0 3px 3px 0;
+        border-radius: 0 1px 1px 0;
         user-select: none;
     }
     .next {
         right: 0;
-        border-radius: 3px 0 0 3px;
+        border-radius: 1px 0 0 1px;
     }
     .prev:hover, .next:hover {
         background-color: rgba(0,0,0,0.8);
@@ -131,6 +132,35 @@
         position: absolute;
         top: 0;
         right:0;
+    }
+    .text-slides {
+        padding: 20px 40px;
+        box-sizing: border-box;
+    }
+
+    .text-slides .slide {
+        margin: 0;
+        padding: 10px 0;
+    }
+
+    .dots-container {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .dot {
+        cursor: pointer;
+        height: 10px;
+        width: 10px;
+        margin: 0 4px;
+        background-color: #ccc;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+    }
+
+    .dot.active, .dot:hover {
+        background-color: #EBA6A6;
     }
     .fade {
         animation-name: fade;
@@ -158,12 +188,15 @@
     }
     .slide img {
         width: 90% !important;
-        margin-left: 55px;
+        margin-left: 0px;
+        
     }
 }
 
 @media (max-width: 767px) {
-    .syne-uniquifier { font-size: 35px; }
+    .syne-uniquifier { 
+        font-size: 35px; 
+    }
     .overview { 
         width: 90%;
         margin-top: 30px;
@@ -238,7 +271,7 @@
         </div>
     </div>
     <div id="header">
-        <p> <h1 class="syne-uniquifier" > hestia </h1> 
+        <h1 class="syne-uniquifier" > hestia </h1> 
         <small><em>A 5 month long incubator to create a new product based on market opportunity and validate the idea by launching Meta Ads and evaluating the funnel</em></small></p>
     </div>
         
@@ -287,36 +320,828 @@
         </div>
     </div>
 
-
-    <div class="two-col-big">
-        <div class="section">
-            <img src="projectimages/hestia/hestia ads.png" alt="Hestia Ad" style="width:400px; display:block; margin-left: auto; margin-right: auto">
+    <!-- 1 DEFINE -->
+    <div class="card inter-uniquifier" id="ideate">
+        <h3 class="syne-uniquifier">
+            <span style="color: #EBA6A6;">define</span> &rarr; ideate &rarr; position &rarr; build &rarr; validate &rarr; pitch
+        </h3>
+        </h3>
+        <p style="font-style: italic; font-weight: 200;">Which industry is active, and what problem inside it is worth solving?</p>
+        <ul class="chip">
+            <li class="picked"> CleanTech</li>
+        </ul>
+        <div class="card-row">
+            <section>
+                <p class="body-text">Assessing Opportunities in Clean Energy</p>
+                <ul class="chip">
+                    <li>Pitchbook</li>
+                    <li> Y-Combinator</li>
+                    <li>Boston Consulting Group</li>
+                    <li>Oliver Wyman</li>
+                    <li>Blackstone</li>
+                    <li>Carlyle Group</li>
+                    <li>Individual Investors</li>
+                </ul>
+            </section>
+            <section> 
+                <p class="body-text" > % of Investments by Firm</p>
+                <img src="projectimages/hestia/graphinvestments.png">
+            </section>
         </div>
-        <div class="section">
-            <p class="inter-uniquifier" style="font-weight: 200;" > For this project, we explored the intersection of environmental and real estate opportunities by developing a business concept aimed at addressing the housing and homelessness crisis among young adults, while repurposing empty office buildings.
-            We began by analyzing venture capital trends using Pitchbook to identify high-potential problem spaces and chose to focus on areas with both social impact and market viability. 
-            </p>
-            <p class="inter-uniquifier" style="font-weight: 200;">To validate ideas, we interviewed industry leaders, applied The Mom Test with peers, and engaged “superfans” through communities on Reddit and Quora to gather authentic feedback.
-            Based on this research, we defined our target audience, mapped their needs, and created a detailed consumer profile. Using insights from competitor analysis and the Consumer-Based Brand Equity Pyramid, we finalized brand positioning and pricing strategies.
-            </p>
-            <p class="inter-uniquifier" style="font-weight: 200;">
-            For the marketing component, we developed a landing page following a reservation funnel format and designed over 30 iterations of Facebook and Instagram ads. After testing ads for a week and analyzing results, we refined the messaging and explored alternative traffic channels like Reddit and Facebook forums.
-            Finally, we built a B2C dashboard to track audience engagement and evaluate the business concept, enabling data-driven decisions for messaging and positioning.
-            </p>
+        <p class="title-sub">Brainstorm Mindmap</p>
+        <p class="body-text" style="font-size:15px"><em>Chosen Problem Space:Explore innovative ways to protect ecosystems, use land more sustainably, and create solutions for issues like deforestation and soil health.</em></p>
+        <img src="projectimages/hestia/Mindmap.png">
+        <p class="title-sub" style="font-style: italic; font-size:25px; font-weight: 400; color: #EBA6A6;"> Idea: combine adaptive reuse buildings and the outside vegetation that helps with energy efficiency, air filtration</p>
+        <p class="body-text" style="font-size:15px"><em>Now pivotting to focus on 2 industries <em> researching real estate market to ensure opportunity</em></em></p>
+        <div class="card-row">
+                <section>
+                    <ul class="body-text">
+                        <li><strong>1bn</strong> square feet of office space is currently sitting vacant</li>
+                        <li><strong>26%</strong> increase in average rents reported from 2020 to 2024 in the U.S.</li>
+                        <li><strong>24%</strong> of renters in America say they can no longer afford their rent</li>
+                    </ul>
+                </section>
+                <section> 
+                    <ul class="body-text">
+                        <li><strong>31%</strong> of Gen Z live at home with a parent or family member</li>
+                        <li><strong>1 in 500</strong> experience homelessness in America</li>
+                        <li><strong>54%</strong> emission reductions by 2050 by converting office spaces instead of new construction</li>
+                    </ul>
+                </section>
         </div>
-
     </div>
-
-    <div class="section">
-        <h3 class="inter-uniquifier" style="font-weight: 300;"> Hestia's Landing Page(website)</h3>
-        <video autoplay muted controls loop>
-            <source src="projectimages/hestia/Hestia Website.mov" style="width: 800px"> /* doesnt load and im not sure why because the path is correct */
-		</video>
-    </div>
+    <!-- 2 Ideate -->
+    <div class="card inter-uniquifier" id="ideate">
+        <h3 class="syne-uniquifier">
+            define &rarr; <span style="color: #EBA6A6;"> ideate </span> &rarr; position &rarr; build &rarr; validate &rarr; pitch
+        </h3>
+        <div class="card-row">
+            <section>
+                <p class="title-sub"> The Problem</p>
+                <p class="body-text">Rising rents are making it difficult for young professionals to find affordable housing near their workplaces, and many face or experience homelessness. Post pandemic, office vacancy has surged, leaving valuable CBD real estate unused, and many city dwellers face increased loneliness. </p>
+            </section>
+            <section> 
+                <p class="title-sub"> The Solution</p>
+                <p class="body-text">Converting vacant office spaces into co-living apartments provides affordable housing near workplaces and fosters community and socialization through shared spaces to combat urban isolation. This not only addresses housing affordability, but also promotes sustainability by repurposing existing structures instead of new construction.</p>
+            </section>
+        </div>
+        <p class="title-sub"> Evidence</p>
+        <div class="card-row">
+            <section>
+                <ol class="body-text">
+                    <li><strong>Government Regulation</strong> Assembly Bill 1532 to fast track office-to-housing conversions 421-g NYC tax exemptions for commercial to residential conversions</li>
+                    <li><strong>Supply of Buildings</strong> LA county alone: 2300 properties that could produce between 72,000 - 113,000 housing units (CBRE) </li>
+                    <li><strong>Demand is Significatn</strong> Growing movement to urban centres. Rising rents costs is ubiquitous</li>
+                    <li><strong>Already Underway</strong> 42 office conversions completed as of Dec 2022, 217 more planned (CBRE) </li>
+                </ol>
+            </section>
+            <section> 
+                <blockquote class="quote">
+                    <p>The best sustainable/climate startups don’t actually look like startups; rather they are good ideas or beloved products that also have planetary benefits.</p>
+                    <cite> Managing Partner at Thirdsphere VC</cite>
+                </blockquote>
+                <p><br></p>
+                <blockquote class="quote">
+                    <p>Co-living is a nascent market for investors.</p>
+                    <cite> Director at JLL, which last year published The European Co-Living Best Practice Guide in partnership with the Urban Land Institute.</cite>
+                </blockquote>            
+            </section>
+        </div>
+        <p class="title-sub">Type of Office to Apartment Conversions</p>
+        <div class="card-row">
+            <section>
+                <div class="slideshow-container" id="floorPlans1" style="width: 400px;" >
+                    <div class="slide"> 
+                        <div class="slidenum">1 / 2</div>
+                        <img src="projectimages/hestia/fp1before.png" alt="Slide 1" >
+                        <div class="subtitle">Example 1</div>                        
+                    </div>
+                    <div class="slide"> 
+                        <div class="slidenum">2 / 2</div>
+                        <img src="projectimages/hestia/fp1after.png" alt="Slide 2" >
+                        <div class="subtitle"> Special Case Scenario: To have fully funcitoning private apartments are with older office buildings that are smaller, have a desirable shape and have more windows(to abide by housing regulations)</div>
+                    </div>
+                    <a class="prev" onclick="plusSlides(this, -1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(this, 1)">&#10095;</a> 
+                </div>
+            </section>
+            <section>
+                <div class="slideshow-container" id="floorPlans2" style="width: 250px;" >
+                    <div class="slide"> 
+                        <div class="slidenum">1 / 2</div>
+                        <img src="projectimages/hestia/fp2before.png" alt="Slide 1" s>
+                        <div class="subtitle">Example 2</div>
+                    </div>
+                    <div class="slide"> 
+                        <div class="slidenum">2 / 2</div>
+                        <img src="projectimages/hestia/fp2after.png" alt="Slide 2" >
+                        <div class="subtitle"> Floor Plan Before vs After Office → Apartments (added a courtyard by removing center)</div>
+                    </div>
+                    <a class="prev" onclick="plusSlides(this, -1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(this, 1)">&#10095;</a> 
+                </div>
+            </section>
+        </div>
+        <div class="card-row">
+            <section>
+                <div class="slideshow-container" id="floorPlans3" style="width: 400px; ">
+                    <div class="slide">
+                        <div class="slidenum">1 / 3</div>
+                        <img src="projectimages/hestia/fp3before.png" alt="Slide 1" >
+                        <div class="subtitle">Example 3</div>
+                    </div>
+                    <div class="slide"> 
+                        <div class="slidenum">2 / 3</div>
+                        <img src="projectimages/hestia/fp3afterdorm.png" alt="Slide 2" >
+                        <div class="subtitle"><em>First Option</em> <strong>Dorm Style CoLiving Apartments</strong>**CoLiving is the cheapest option as it would have a 30% discount → around $100-$200/sq ft instead of  $300-$500 (NYC)</div>
+                    </div>
+                     <div class="slide"> 
+                        <div class="slidenum">3 / 3</div>
+                        <img src="projectimages/hestia/fp3aftersuite.png" alt="Slide 3" >
+                        <div class="subtitle"><em>Second Option</em> <strong>Suite Style CoLiving Apartments</strong>**CoLiving is the cheapest option as it would have a 30% discount → around $100-$200/sq ft instead of  $300-$500 (NYC)</div>
+                    </div>
+                    <a class="prev" onclick="plusSlides(this, -1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(this, 1)">&#10095;</a> 
+                </div>
+            </section>
+            <section>
+                <div class="slideshow-container" id="floorPlans4" style="width: 400px; ">
+                    <div class="slide"> 
+                        <div class="slidenum">1 / 2</div>
+                        <img src="projectimages/hestia/fp4before.png" alt="Slide 1" >
+                        <div class="subtitle">Example 4</div>
+                    </div>
+                    <div class="slide"> 
+                        <div class="slidenum">2 / 2</div>
+                        <img src="projectimages/hestia/fp4after.png" alt="Slide 2" >
+                        <div class="subtitle"> Floor Plan Before vs After Office → Incorporates environmental features to save energy costs and increase quality of life for inhabitants</div>
+                    </div>
+                    <a class="prev" onclick="plusSlides(this, -1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(this, 1)">&#10095;</a> 
+                </div>
+            </section>
+        </div>
+        <p class="title-sub"> What does co-living mean?</p>
+        <p class="body-text"> Co-living is a housing model where indivduals have their own room but alsoshare amentities such as kitchen, living spaces, and bathrooms. It is the most practical solution when converting office spaces into apartments. Below are visual examples of how the office spaces transform into living spaces.</p>
+        <p class="body-text"> After reasearching office conversions, we went with a combination of example 3 and 4. Numbers show that converting an office building into private apartments can be more costly than tearing down the building and rebuilding from scratch. To continue to be mindful about the environemnt while also having a sustanable business model, we went with option 3. </p>
       
 
+        <p class="title-sub"> Possible Customer Persona</p>
+        <div class="info-card" style="margin-bottom: 20px;">
+            <p class="title-sub" style="color: #EBA6A6; margin-top: 0;">Entry to Mid Level Professional</p>
+            <div class="card-row" style="gap: 24px; align-items: flex-start;">
+                <div class="section" style="flex: 0 0 240px;">
+                    <p class="body-text" style="flex-direction: column; align-items: flex-start;"><strong>Basic Info</strong><br>Age:22 to 35 years old<br>Occupation: Tech, finance, or creative industries<br>Income: $40K to $75K<br>Location: City centers with high job concentration<br>Gender: Equal male and female renters</p>
+                </div>
+                <div class="section" style="flex: 1; min-width: 0;">
+                    <blockquote class="quote">
+                        <p>I want a place where I can live affordably near my work, be part of a vibrant community, and have everything taken care of without the hassle.</p>
+                        <cite>Our target customer</cite>
+                    </blockquote>
+                    <p class="body-text"><strong>Pain Points</strong></p>
+                    <ul class="chip" style="background-color: transparent;border:none">
+                        <li ><strong>Affordability</strong>Rising rents make independent living difficult</li>
+                        <li ><strong>Loneliness</strong>Isolated, especially if new or remote</li>
+                        <li ><strong>Housing availability</strong>Few affordable options near work</li>
+                        <li ><strong>Convenience</strong>Too many separate services</li>
+                    </ul>
+                    <p class="body-text"><strong>Goals, Needs, Values</strong></p>
+                    <ul class="chip">
+                        <li ><strong>Affordability and proximity</strong>Affordable housing close to work</li>
+                        <li ><strong>Social connection</strong>Community to combat isolation</li>
+                        <li ><strong>Flexibility</strong>Flexible leases, room to grow</li>
+                        <li ><strong>Convenience</strong>Utilities and maintenance included</li>
+                        <li ><strong>Sustainability</strong>Eco-friendly living</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--- slideshow of floor plans-->
+    </div>
+   <!-- 3 Position -->
+    <div class="card inter-uniquifier" id="market prep">
+        <h3 class="syne-uniquifier">
+            define &rarr; ideate &rarr; <span style="color: #EBA6A6;"> position </span> &rarr; build &rarr; validate &rarr; pitch
+        </h3>
+        <p style="font-style: italic; font-weight: 200;"> Surveying Customer Interest/Profiles</p>
+        <div class="card-row survey-row">
+            <div class="section" style="flex: 1;">
+                <div class="info-card">
+                    <p class="title-sub">Survey Questions</p>
+                    <ol class="body-text">
+                        <li>Describe your last home search? What were some challenges you faced? Did you have to make any compromises?</li>
+                        <li>What specific amenities or features in your current home make it feel comfortable to live in? Were there any that were a key part of your decision to move in?</li>
+                        <li>How does your current living space accommodate your everyday lifestyle (e.g., work from home, family size, cooking, relaxing)? Have you had to make any adjustments?</li>
+                        <li>Have you ever lived in a building with shared spaces or amenities? What was it like? Can you rate the experience? Positives? Negatives?</li>
+                        <li>The last time you moved, did you consider community spaces or amenities when choosing your building? If so, explain.</li>
+                        <li>Did sustainability(eg renewable energy) factor into your most recent housing decision? Did you end up choosing a more sustainable option</li>
+                        <li> What was your last experience with paying rent in an urban city? Were there any challenges with affordability?</li>
+                        <li>What was your last utility bill like? Did you feel it was too high or fair?</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="section" style="flex: 1.3;">
+                <div class="slideshow-container text-slides info-card" id="SurveyAnswers">
+                        <div class="dots-container" style="margin-bottom: 0px;"> 
+                            <span class="dot active" onclick="currentSlide(this, 0)"></span>
+                            <span class="dot" onclick="currentSlide(this, 1)"></span>
+                            <span class="dot" onclick="currentSlide(this, 2)"></span>
+                        </div>
+                        <div class="slide">
+                            <p class="title-sub">Person 1 - Entry Level Employee in NYC</p>
+                            <ol class="body-text">
+                                <li>Search was tough, market’s competitive, had to compromise on space and location </li>
+                                <li> In-unit laundry and a gym </li>
+                                <li>Small, doesn’t need much just a place to relax after work</li>
+                                <li>Yes, it was around 6/10, the people truly define if it is a good experience or not</li>
+                                <li>Just specifically a gym but I also looked into having a roommate to open my options</li>
+                                <li>Sustainability wasn’t a big factor but for sure energy efficiency</li>
+                                <li>Rent is definitely high in NYC but I did a lot of searching to make it work</li>
+                                <li>My utility bill is pretty fair for NYC but I think it will definitely will go up during the winter which I am not looking for </li>
+                            </ol>
+                        </div>
+                        <div class="slide">
+                            <p class="title-sub">Person 2 - Entry Level Employee in NYC</p>
+                            <ol class="body-text">
+                                <li> Finding  housing in a prime area, but rent prices were very expensive. I wanted to live downtown, in a neighborhood close to all my friends and work.</li>
+                                <li>At 24, and the beginning  of my career I don’t want to be commuting very long to work. I want to make sure home very just in case of an emergency </li>
+                                <li>In my building we have a gym, but if we had a basketball court, golf simulator and a sauna and steam room that would be amazing. I know for my ask I’m going to be required way higher rent</li>
+                                <li>Yes, I would I want to make as much money as I can right now and save money on rent. I wouldn’t mind a game room, and a tv area. I enjoy socializing with the people who live around me </li>
+                                <li>If it was properly developed I wouldn’t and living there at all, especially if it’s a good location.</li>
+                                <li>I will look through Zillow, Redfin, and if my friends know about anything they would tell me. But the most the influence is a clean modern building and location. New York has a problem with cleanliness of buildings</li>
+                            </ol>
+                        </div>
+                        <div class="slide">
+                            <p class="title-sub">Person 3 - Real Estate Developer in LA Perspective1</p>
+                            <ol class="body-text">
+                                <li>From in an investment standpoint, it has to make financial sense and be practical.  Every deal is different and has to be analyzed independently. There are different strategies for different groups of investors.  Office to apartment conversions now represent 38% of 150,000 apartments in future adaptive reuse projects.  These types of projects are becoming more and more feasible with regulations are coming down and the upcoming change in urban landscape.</li>
+                                <li>Location is very important because it influences the value of the property. The way any business makes money is asking: “how do we make the customers life easier.”  Downtown’s are struggling nationwide- The amount of vacant office buildings in dense urban areas is an interesting point of conversation and a problem that needs to continue to be addressed. </li>
+                                <li>In a development project, what you would want is a return on investment.  You would want to have rooms that are 1000 SQFT. They have to be a little nicer because all the living amenities will be shared.  For the arts district project, a slam dunk would be acquisition of $180 PSF (Asking price is $250 PSF).  City incentives prohibit you from collecting certain returns. If you take money from the city, that puts a ceiling on the amount you can collect.  You would want a low acquisition price and development costs that bring you up to $220 PSF.  Unless you get a low acquisition price that allows you to collect a profit, this type of deal is not my kind of investment. </li>
+                                <li>Dense urban centers have buildings that go up (instead of out) which is harder to do a conversion.  There are a couple ways to easily lose your shirt, one of them being project like these where there is capital intensive work. </li>
+                                <li>Look at the conversions already being done and the rates they are getting on finished conversions. </li>
+                            </ol>
+                        </div>  
+                    </div>    
+                </div>           
+            </div>          
+        <p class="title-sub">Understanding the Audience</p>
+        <div class="card-grid two">
+            <div class="info-card">
+                <h4>Core demographic</h4>
+                <p class="body-text">Young professionals (22–35) working in central business districts in finance, tech, and consulting. Early in their careers, unmarried, and looking for flexibility, social connection, and work-life balance in cities where rent is high.</p>
+            </div>
+            <div class="info-card">
+                <h4>What they need</h4>
+                <ul class="chip" style="background-color: transparent; border: none;">
+                    <li><strong>Affordability</strong>Cost-effective housing close to work</li>
+                    <li><strong>Proximity</strong>Short commutes, city amenities nearby</li>
+                    <li><strong>Community</strong>Connection in a city where it is easy to feel isolated</li>
+                </ul>
+            </div>
+        </div>
+        <h4 class="title-sub">Competitive Analysis</h4>
+        <div class="table-scroll">
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Common</th>
+                        <th>WeLive / WeWork</th>
+                        <th>Gravity Co</th>
+                        <th class="hestia">Hestia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Price per month</th>
+                        <td>$1,200–$2,500</td>
+                        <td>$2,500–$4,000</td>
+                        <td>$1,700</td>
+                        <td class="hestia">$900–$1,500</td>
+                    </tr>
+                    <tr>
+                        <th>Their message</th>
+                        <td>Stress-free city living with fully furnished homes, flexible leases, and all-inclusive pricing</td>
+                        <td>Flexible living integrated with co-working, with everything young professionals need under one roof</td>
+                        <td>Social living for young professionals. Book a viewing in minutes, move in within days</td>
+                        <td class="hestia">Affordable, community-driven living in the heart of NYC</td>
+                    </tr>
+                    <tr>
+                        <th>What stands out</th>
+                        <td>Furnished rooms, a three-month minimum lease, high-end furniture, and amenities like co-working, pools, and roof decks</td>
+                        <td>Co-living tied to co-working, and a marketing push around loneliness. Upscale and discontinued</td>
+                        <td>Affordable social living and a fast, low-friction move-in</td>
+                        <td class="hestia">Converted vacant offices in central locations, themed floors, and sustainability</td>
+                    </tr>
+                    <tr>
+                        <th>What they did right</th>
+                        <td>Easy move-in, community events, and clean, well-furnished spaces</td>
+                        <td>High-end amenities, living and working in one place, and events like Monday brunch</td>
+                        <td>Residents describe instant friends and a strong community spirit</td>
+                        <td class="hestia">Easy move-in, events, and furnished rooms</td>
+                    </tr>
+                    <tr>
+                        <th>Where they fall short</th>
+                        <td>Noise, little privacy, slow maintenance, and lax security in shared areas</td>
+                        <td>High prices, and short leases that made the building transient</td>
+                        <td>Slow repairs, poor communication, and rent higher than advertised</td>
+                        <td class="hestia">Monthly cleaning staff, lobby security, and a private room with shared amenities</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    
+        <h4 class="title-sub">Consumer-based brand equity pyramid</h4>
+        <div class="pyramid-wrap">
+            <svg viewBox="0 0 420 300" role="img" aria-label="Brand equity pyramid, from the bottom: salience, then performance and imagery, then judgments and feelings, then resonance">
+                <g stroke="#fff" stroke-width="4" stroke-linejoin="round">
+                    <polygon points="180,0 240,0 285,75 135,75" fill="#EBA6A6"/>
+                    <polygon points="135,75 210,75 210,150 90,150" fill="#F0BBBB"/>
+                    <polygon points="210,75 285,75 330,150 210,150" fill="#F0BBBB"/>
+                    <polygon points="90,150 210,150 210,225 45,225" fill="#F5D0D0"/>
+                    <polygon points="210,150 330,150 375,225 210,225" fill="#F5D0D0"/>
+                    <polygon points="45,225 375,225 420,300 0,300" fill="#F9E3E3"/>
+                </g>
+                <text x="210" y="40">Resonance</text>
+                <text x="161" y="112">Judgments</text>
+                <text x="259" y="112">Feelings</text>
+                <text x="139" y="187">Performance</text>
+                <text x="281" y="187">Imagery</text>
+                <text x="210" y="263">Salience</text>
+            </svg>
+            <ul class="pyramid-list">
+                <li><strong>Salience.</strong> Hestia sits where real estate redevelopment, affordable housing, and co-living meet. Competitors: Common, WeLive, and PodShare.</li>
+                <li><strong>Performance.</strong> Expected: a private bedroom, shared bathrooms and kitchen, a gym, and rooms to work from. Different: price, central location, themed floors, and green walls that cut energy costs.</li>
+                <li><strong>Imagery.</strong> Bold but upscale: clean, inviting, and fun at a low price. Jewel tones, earth tones, and neutrals. We reach Gen Z through TikTok and creators.</li>
+                <li><strong>Judgments.</strong> We want a solid, relevant choice for people early in their careers. The risks: seen as gross, cheaply made, or unsafe.</li>
+                <li><strong>Feelings.</strong> Comfort and community pride. Shared living is usually thought of as uncomfortable, so it has to feel homey.</li>
+                <li><strong>Resonance.</strong> Loyalty comes from a building people want to be associated with. A selective application process and building events give them a reason to talk about it.</li>
+            </ul>
+        </div>
+    
+        <!-- Value proposition -->
+        <p class="title-sub">Value Proposition</p>
+        <div class="card-grid">
+            <div class="info-card">
+                <h4>Affordability</h4>
+                <p class="label">Benefit</p>
+                <p class="body-text">Eases the squeeze of an entry-level salary, high cost of living, and saving for the future.</p>
+                <p class="label">Feeling</p>
+                <p class="body-text">Relief. Living comfortably within their means.</p>
+            </div>
+            <div class="info-card">
+                <h4>Quality</h4>
+                <p class="label">Benefit</p>
+                <p class="body-text">Luxurious-looking interiors, no pests or mold, and a monthly cleaning staff.</p>
+                <p class="label">Feeling</p>
+                <p class="body-text">Excitement to live there, not just relief.</p>
+            </div>
+            <div class="info-card">
+                <h4>Social benefits</h4>
+                <p class="label">Benefit</p>
+                <p class="body-text">Themed floors (all-women, hobbies, industry) plus shared living rooms and recreation areas.</p>
+                <p class="label">Feeling</p>
+                <p class="body-text">Belonging. Finding your people in a new city.</p>
+            </div>
+        </div>
+        <ul class="chip">
+            <li>Secondary: central location</li>
+            <li>Secondary: amenities (gym, pool, game room, security)</li>
+            <li>Secondary: sustainability (green walls, renewable energy)</li>
+        </ul>
+    
+        <!-- Pricing -->
+        <p class="title-sub">Pricing &amp; Revenue</p>
+        <div class="price-bars">
+            <div class="price-row hestia">
+                <span>Hestia</span>
+                <div class="price-track"><span style="left: 22.5%; width: 15%;"></span></div>
+                <span class="price-label">$900–$1,500</span>
+            </div>
+            <div class="price-row">
+                <span>Common</span>
+                <div class="price-track"><span style="left: 30%; width: 32.5%;"></span></div>
+                <span class="price-label">$1,200–$2,500</span>
+            </div>
+            <div class="price-row">
+                <span>Gravity Co</span>
+                <div class="price-track"><span style="left: 42%; width: 1.5%;"></span></div>
+                <span class="price-label">$1,700</span>
+            </div>
+            <div class="price-row">
+                <span>WeLive</span>
+                <div class="price-track"><span style="left: 62.5%; width: 37.5%;"></span></div>
+                <span class="price-label">$2,500–$4,000</span>
+            </div>
+            <div class="price-scale"><span>$0</span><span>$1,000</span><span>$2,000</span><span>$3,000</span><span>$4,000</span></div>
+        </div>
+        <div class="card-grid two">
+            <div class="info-card">
+                <h4>Rent</h4>
+                <ul class="body-text">
+                    <li><strong>$1,340–$1,500</strong> for about 80% of units</li>
+                    <li><strong>$900–$1,000</strong> for about 20% of units</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h4>Unit economics</h4>
+                <ul class="body-text">
+                    <li>Building: about $200–$250 / sq ft</li>
+                    <li>Renovation: about $100–$200 / sq ft</li>
+                    <li>About $500 profit per unit per month, so about $6,000 per tenant per year (our breakeven ROAS)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!----maybe ad section before thats surveying, research? -->
+        <!---Mood board, main question do we want to appeal to luxury tomake money, highlight struggle--->
+        <!----designing website-->
+    </div>
+
+    <!-- 4 build -->
+    <div class="card inter-uniquifier" id="build">
+        <h3 class="syne-uniquifier">
+            define &rarr; ideate &rarr;  position &rarr; <span style="color: #EBA6A6;"> build</span> &rarr; validate &rarr; pitch
+        </h3>
+        <!-- Mood boards -->
+        <p class="title-sub">Mood Boards</p>
+        <!-- Export both from Canva as images. Don't link the Canva edit URL on a public site. -->
+        <div class="card-grid two">
+            <img class="create-img" src="projectimages/hestia/hmoodboard1.png" alt="Hestia mood board 1">
+            <img class="create-img" src="projectimages/hestia/hmoodboard2.png" alt="Hestia mood board 2">
+        </div>
+        <p class="body-text">The question we started with was whether to lean on luxury or on the struggle of finding affordable housing. We chose bold and upscale: clean, inviting, and fun, with jewel tones, earth tones, and neutrals. Round 1 chased the lowest possible rent. We then moved to mid-market, with luxurious branding and a full set of amenities at $1,300 a month, still low enough to qualify for low-income housing tax benefits.</p>
+    
+        <!-- AI layouts -->
+        <p class="title-sub"> AI Generate Layouts</p>
+        <div class="card-row" style="align-items: center;">
+            <div class="section">
+                <p class="body-text">AI-generated design layouts for the Hestia project. To Note: this is when AI Gen images were less developed so they don't look as clean. These images are important to translate the ideas from the mood board and brand identity into tangible design elements.</p>
+            </div>
+            <div class="section">
+                <div class="slideshow-container" id="aiImages">
+                    <div class="slide" style="margin-top: auto;margin-bottom: auto;"> 
+                        <div class="slidenum">1 / 3</div>
+                        <img src="projectimages/hestia/hAIimage1.png" alt="Slide 1">
+                    </div>
+                    <div class="slide"> 
+                        <div class="slidenum">2 / 3</div>
+                        <img src="projectimages/hestia/hAIimage2.png" alt="Slide 2">
+                    </div> 
+                    <div class="slide"> 
+                        <div class="slidenum">3 / 3</div>
+                        <img src="projectimages/hestia/hAIimage3.png" alt="Slide 3">
+                    </div> 
+                    <a class="prev" onclick="plusSlides(this, -1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(this, 1)">&#10095;</a> 
+                </div>
+            </div>
+        </div>
+        <p class="title-sub">Floor Plans from a Real Building in LA</p>
+            <div class="card-grid two">
+                <div class="slideshow-container" id="laFloorPlans">
+                    <div class="slide">
+                        <div class="slidenum">1 / 3</div>
+                        <img src="projectimages/hestia/hestiafloorplan1.png" alt="Floor plan 1">
+                    </div>
+                    <div class="slide">
+                        <div class="slidenum">2 / 3</div>
+                        <img src="projectimages/hestia/hestiafloorplan2.png" alt="Floor plan 2">
+                    </div>
+                    <div class="slide">
+                        <div class="slidenum">3 / 3</div>
+                        <img src="projectimages/hestia/hestiafloorplan3.png" alt="Floor plan 3">
+                    </div>
+                    <a class="prev" onclick="plusSlides(this, -1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(this, 1)">&#10095;</a>
+                </div>
+                <div class="section">
+                    <p><em>Testing the idea on a real floor</em></p>
+                    <!-- Add the building name and neighborhood here if you want them public. -->
+                    <p class="body-text">We worked from the real floor plans of an office building in Los Angeles to see how a floor splits into private rooms and shared bathrooms, kitchens, and living space. Floorplan of Currently Vacant and gutted office space.(800-810 Traction Ave). The traditinally proposed floor for conversion is the first image. This plan is not effiicent.</p>
+                </div>
+            </div>
+        <p class="title-sub">Voice &amp; Messaging</p>
+        <div class="card-grid two">
+            <div class="info-card">
+                <h4>Headlines we tested</h4>
+                <ul class="body-text">
+                    <li>“Affordable, Community-Driven Living in the Heart of NYC”</li>
+                    <li>“Revitalized Spaces for Young Professionals”</li>
+                    <li>“Work, Live, and Thrive Together”</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h4>Tone</h4>
+                <p class="body-text">Optimistic, urban, and community-focused, with affordability and sustainability up front. Friendly and straightforward, so renters feel understood.</p>
+            </div>
+        </div>    
+        <p class="title-sub">Messaging Iterations for Ads & Landing Pages<em>Phrases</em></p>
+        <div class="text-collage">
+            <div class="tc big s4">Uncomplicated Luxury for Everyday Living<small>Round 1, landing page hero</small></div>
+            <div class="tc fill tilt-r">Affordable living, elevated.<small>Round 1, hero subtext</small></div>
+    
+            <div class="tc s3">Experience city living without breaking the bank, all while enjoying an elevated lifestyle and finding the home away from home<small>Round 1, Facebook ad text</small></div>
+            <div class="tc big s3">Your Home Away from Home, at a Price You Can Afford<small>Round 1, hero option</small></div>
+    
+            <div class="tc big">City Living Made Affordable<small>Round 1, hero option</small></div>
+            <div class="tc s4">The World’s Most Affordable Urban Living Experience to Save You Money &amp; Simplify City Life<small>Round 1, hero option</small></div>
+    
+            <div class="tc s3">Hestia is a modular micro-housing community with 200-square-foot units, shared bathrooms, and kitchens, offering an affordable and convenient solution for city living.<small>Round 1, hero subtext</small></div>
+            <div class="tc s3">Affordability, quality, social benefits, primary location, amenities, sustainability<small>Round 1, the six feature spotlights in the ad</small></div>
+    
+            <div class="tc">We’re Launching Soon. Get an exclusive discount by signing up now! Reserve My Launch Invite<small>Round 1, sign-up form</small></div>
+            <div class="tc big">Where Real People meet Real Living<small>Round 1, landing page section 3</small></div>
+            <div class="tc tilt-l">Find your community and home today<small>Round 1, landing page section 4</small></div>
+    
+            <div class="tc">Seamless Urban Living with Community-Centric Design<small>Round 1, landing page section 5</small></div>
+            <div class="tc fill">Live with individuals with your background in your industry.<small>Round 1, landing page section 4</small></div>
+            <div class="tc big">Save 33% when you reserve Hestia today!<small>Round 1, reservation page</small></div>
+    
+            <div class="tc s6">Converted apartment buildings from office spaces that include private rooms, communal bath and kitchen, private office rooms, and community spaces (gyms, game room, TV room)<small>Round 1, Facebook ad headline</small></div>
+    
+            <div class="tc dark s6">Where we landed: mid-market at $1,300 a month, with luxurious branding and a full set of amenities, and still low enough to qualify for low-income housing tax benefits.<small>Final positioning</small></div>
+        </div>
+    
+        <p class="title-sub">Messaging Iterations for Ads & Landing Pages <em>Images</em></p>
+        <!-- Swap in your real screenshots. Sizes are set by the classes: wide, tall, or neither. -->
+        <div class="img-collage">
+            <img class="wide" src="projectimages/hestia/hcollageimage1.png" alt="Three Hestia ads">
+            <img class="tall" src="projectimages/hestia/hcollageimage2.png" alt="Hestia hero image">
+            <img src="projectimages/hestia/hcollageimage3.png" alt="Hestia ad">
+            <img src="projectimages/hestia/hcollageimage56.png" alt="Ad iteration">
+            <img class="tall" src="projectimages/hestia/hcollageimage6.png" alt="Reservation page">
+            <img src="projectimages/hestia/hestiaAIimage8.png" alt="Landing page on mobile">
+            <img class="wide" src="projectimages/hestia/hcollageimage7.png" alt="Landing page hero">
+            <img src="projectimages/hestia/hcollageimage4.png" alt="Ad iteration">
+        </div>
+        <p class="title-sub"> Top 3 Ads</p>
+        <p class="body-text"> Utilizing peers and community we built these 3 ads to compete against each other on Meta.</p>
+        <img src="projectimages/hestia/all3ads.png" style=" display:block; margin-left: auto; margin-right: auto">
+        
+        <p class="title-sub"> <br> Hestia Landing Page</p>
+        <h4>Built as a reservation page</h4>
+        <p class="body-text">A hero banner, then a sign-up form with one button, “Reserve My Launch Invite,” then sections on community, the most different feature, and the vision.</p>
+        <div class="section">
+            <h3 class="inter-uniquifier" style="font-weight: 300;"> Hestia's Landing Page(website)</h3>
+            <video autoplay muted controls loop>
+                <source src="projectimages/hestia/Hestia Website.mov" style="width: 800px"> /* doesnt load and im not sure why because the path is correct */
+		    </video>
+        </div>
+    </div>
+    <!---6 Validate-->
+    <!-- Replace the whole existing <div class="card inter-uniquifier" id="validate"> block with this -->
+    <div class="card inter-uniquifier" id="validate">
+        <h3 class="syne-uniquifier">
+             define &rarr; ideate &rarr;  position &rarr; build &rarr; <span style="color: #EBA6A6;"> validate </span> &rarr; pitch
+        </h3>
+        <p style="font-style: italic; font-weight: 200;">Would people actually reserve a room, and what does it cost us to find out?</p>
+ 
+        <!-- Funnel + pricing -->
+        <p class="title-sub">Creating the Ad Funnel</p>
+        <ul class="chip">
+            <li class="picked">Meta ad</li>
+            <li>Landing page</li>
+            <li>Reservation form</li>
+            <li>$50 deposit</li>
+        </ul>
+        <p class="body-text">Every test ran through the same funnel: someone sees an ad, lands on the reservation page, fills in the form, and puts down a deposit. Pricing was set so we could judge each click against what a tenant is worth.</p>
+        <ul class="chip-pink">
+            <li><strong>$50</strong>Deposit price</li>
+            <li><strong>$1,000</strong>Discounted price, for 3 months</li>
+            <li><strong>$1,200</strong>MSRP retail price</li>
+            <li><strong>$200</strong>Discount (33%)</li>
+        </ul>
+        <div class="card-grid two">
+            <div class="info-card">
+                <h4>Unit economics</h4>
+                <ul class="body-text">
+                    <li><strong>$1,500</strong> rent per unit per month</li>
+                    <li><strong>$500</strong> profit per unit per month</li>
+                    <li>$500 x 12 months = <strong>$6,000</strong> per tenant per year</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h4>Breakeven ROAS</h4>
+                <p class="body-text">We can spend up to <strong>$6,000</strong> to win one tenant before the ad spend stops paying for itself. Anything we pay per click or per reservation is tiny next to that number.</p>
+            </div>
+        </div>
+ 
+        <!-- Round 1 -->
+        <p class="title-sub">Round 1: Three Ads, Two Weeks</p>
+        <p class="body-text">We launched three ads against each other on Meta to find the strongest message before spending more.</p>
+        <div class="card-row">
+            <div class="section">
+                <h4>Class Favorite</h4>
+                <img src="projectimages/hestia/All3ADsclassbest.png" alt="Class Favorite" style="width: 100%">
+            </div>
+            <div class="section">
+                <h4>Best Performing Ad</h4>
+                <img src="projectimages/hestia/BestADMeta.png" alt="Most Clicks" style="width: 100%">
+            </div>
+        </div>
+        <div class="card-row">
+            <div class="section">
+                <h4>Perfomance Metrics</h4>
+                <img src="projectimages/hestia/PerformanceLineGraph.png" alt="Performance Metrics" style="width: 100%">
+            </div>
+            <div class="section">
+                <h4>Demographic Distribution</h4>
+                <img src="projectimages/hestia/age&genderdistribution.png" alt="Cost per Click" style="width: 100%">
+            </div>
+        </div>
+        <p class="body-text">The table below shows the metrics for each ad. The winning ad was the one that drew the most clicks at the lowest cost per click.</p>
+        <div class="table-scroll">
+            <table class="compare-table metrics-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th class="hestia">Hestia Ad 1</th>
+                        <th>Hestia Ad 2</th>
+                        <th>Hestia Ad 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Link Clicks</th>
+                        <td class="hestia">80</td>
+                        <td>40</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <th>Cost per Link Click</th>
+                        <td class="hestia">$0.47</td>
+                        <td>$0.48</td>
+                        <td>$0.94</td>
+                    </tr>
+                    <tr>
+                        <th>CTR (all)</th>
+                        <td class="hestia">5.74%</td>
+                        <td>3.29%</td>
+                        <td>1.52%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout">
+            <strong>Insight.</strong> Ad 1 won clearly. It drew twice the clicks of Ad 2 at nearly the same cost per click, while Ad 3 cost about double per click and barely got seen. We iterated on Ad 1.
+        </div>
+ 
+        <!-- Audience problem + pivot -->
+        <p class="title-sub">The Audience Problem</p>
+        <p class="body-text">Our audience was too broad. Meta restricts targeting on housing ads, so the ads were reaching people 60 and older, which made no sense for a product built for young professionals.</p>
+        <div class="card-grid two">
+            <div class="info-card">
+                <h4>First response</h4>
+                <p class="body-text">Run the ads the way we originally wanted to, as a housing organization, and accept the risk of being flagged under the housing rules.</p>
+            </div>
+            <div class="info-card">
+                <h4>Where we landed</h4>
+                <img src="projectimages/hestia/IterationAd.png" alt="Iteration Ad">
+                <p class="body-text">Pick a new unrestricted audience that is narrower and more focused, and rewrite the best ad with no housing language at all, positioning it around interesting innovations so Meta would not classify it as housing.</p>
+            </div>
+        </div>
+ 
+        <!-- Before / after -->
+        <p class="title-sub">Before and After the Iteration</p>
+        <div class="table-scroll">
+            <table class="compare-table metrics-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Before Iteration</th>
+                        <th class="hestia">After Iteration</th>
+                        <th>Change</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Link Clicks</th>
+                        <td>122</td>
+                        <td class="hestia">0</td>
+                        <td class="drop">100% drop</td>
+                    </tr>
+                    <tr>
+                        <th>Reach</th>
+                        <td>3,438</td>
+                        <td class="hestia">0</td>
+                        <td class="drop">100% drop</td>
+                    </tr>
+                    <tr>
+                        <th>Impressions</th>
+                        <td>4,174</td>
+                        <td class="hestia">0</td>
+                        <td class="drop">100% drop</td>
+                    </tr>
+                    <tr>
+                        <th>Cost per Result</th>
+                        <td>$0.48</td>
+                        <td class="hestia">$0</td>
+                        <td class="drop">100% drop</td>
+                    </tr>
+                    <tr>
+                        <th>Amount Spent</th>
+                        <td>$58.43</td>
+                        <td class="hestia">$0</td>
+                        <td class="drop">100% drop</td>
+                    </tr>
+                    <tr>
+                        <th>CTR</th>
+                        <td>2.923%</td>
+                        <td class="hestia">0%</td>
+                        <td class="drop">100% drop</td>
+                    </tr>
+                    <tr>
+                        <th>Frequency</th>
+                        <td>Not reported</td>
+                        <td class="hestia">Not reported</td>
+                        <td>Not reported</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout">
+            <strong>Insight.</strong> Our iterated ad was rejected by Meta, so it never delivered. The zeros above mean no data, not poor performance. The result is a lesson in itself: even with the housing language removed, the platform rules shaped what we could test.
+        </div>
+ 
+        <!-- Quora + Reddit -->
+        <p class="title-sub">Going Where the Conversation Already Is: Quora and Reddit</p>
+        <p class="body-text">With paid ads blocked, we commented on discussion posts on Quora and Reddit and pointed people to the site. Here is the website's traffic for the week after.</p>
+        <div class="card-row" style="align-items: center;">
+            <section style="flex: 1.4;">
+            <div class="slideshow-container" id="RedditQuoraSlides">
+                <div class="slide"> 
+                    <div class="slidenum">1 / 3</div>
+                    <img src="projectimages/hestia/hestiareddit1.png" alt="Slide 1">
+                </div>
+                <div class="slide"> 
+                    <div class="slidenum">2 / 3</div>
+                    <img src="projectimages/hestia/hestiareddit2.png" alt="Slide 2">
+                </div>
+                <div class="slide"> 
+                    <div class="slidenum">3 / 3</div>
+                    <img src="projectimages/hestia/hestiareddit3.png" alt="Slide 3">
+                </div>  
+                <a class="prev" onclick="plusSlides(this, -1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(this, 1)">&#10095;</a>
+            </div> 
+            </section>
+            <section style="flex: 1;">
+                <div class="slideshow-container" id="RedditQuoraStats">
+                    <div class="slide"> 
+                        <div class="slidenum">1 / 2</div>
+                        <img src="projectimages/hestia/HGoogleAnalytics.png" alt="Slide 1">
+                    </div>
+                    <div class="slide"> 
+                        <div class="slidenum">2 / 2</div>
+                        <img src="projectimages/hestia/websiteanalytics.png" alt="Slide 2">
+                    </div>
+                <a class="prev" onclick="plusSlides(this, -1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(this, 1)">&#10095;</a>
+                </div>
+            </section>
+        </div>
+        <ul class="chip-pink" style="grid-template-columns: 1fr 1fr;">
+            <li style="background-color: #ccc;"><strong>628</strong>Total requests</li>
+            <li style="background-color: #ccc;"><strong>528</strong>From the United States</li>
+        </ul>
+        <p class="body-text">Hosting analytics for the last 7 days. These count requests to the site, not unique visitors.</p>
+      
+        <!----overall takeaways-->
+        <div class="card-grid two">
+            <div class="info-card">
+                <h4>Takeaways</h4>
+                <ul class="body-text">
+                    <li>Real interest: people engaged with our comments on discussion posts</li>
+                    <li>Comments drove clicks, with many people visiting the site after reading them</li>
+                    <li>Clicks did not turn into reservations, and the database showed it, which points to a problem with the landing page</li>
+                    <li>Great amount of interest from people through the commenting on discussion posts </li>   
+                    <li>Hestia has been able to garner clicks as many are going on the website after seeing the comments </li>
+                    <li>However, we aren’t able to convert our clicks into reservations/database shows problems with landing page</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h4>Pivots</h4>
+                <ul class="body-text">
+                    <li>Avoid Facebook & Instagram ads</li>
+                    <li>Utilize other platforms such as Tiktok </li>
+                    <li>Increase number of discussion posts </li>
+                    <li>Revise landing page</li>
+                    <li>Make the form more recognisable on the landing page</li>
+                    <li>Make the form shorter to seem more inviting</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!---6 Pitch-->
+    <div class="card inter-uniquifier" id="pitch">
+        <h3 class="syne-uniquifier">
+            define &rarr; ideate &rarr;  position &rarr; build &rarr; validate &rarr; <span style="color: #EBA6A6;"> pitch </span>
+        </h3>
         <h3 class="inter-uniquifier" style="font-weight: 300;"> Product Validation & Pitch Presentation</h3>
-        <div class="slideshow-container">
+        <div class="slideshow-container" id="hestiaPresentation">
             <div class="slide"> 
                 <div class="slidenum">1 / 33</div>
                 <img src="Hestia_Pres/1.jpg" alt="Slide 1">
@@ -327,7 +1152,7 @@
             </div>
             <div class="slide"> 
                 <div class="slidenum">3 / 33</div>
-                <img src="Hestia_Pres/2.jpg" alt="Slide 3">
+                <img src="Hestia_Pres/3.jpg" alt="Slide 3">
             </div>  
              <div class="slide"> 
                 <div class="slidenum">4 / 33</div>
@@ -411,7 +1236,7 @@
             </div>
             <div class="slide"> 
                 <div class="slidenum">24 / 33</div>
-                <img src="Hestia_Pres/33.jpg" alt="Slide 24">  
+                <img src="Hestia_Pres/24.jpg" alt="Slide 24">  
             </div>  
             <div class="slide"> 
                 <div class="slidenum" > 25/33 </div>
@@ -449,12 +1274,12 @@
                 <div class="slidenum" > 33/33 </div>
                 <img src="Hestia_Pres/33.jpg" alt="Slide 33">
             </div>      
-            
-            
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <a class="prev" onclick="plusSlides(this, -1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(this, 1)">&#10095;</a> 
         </div>
     </div>
+      
+
        <!-- <div class="section">
         <h3 id="reflection" > Reflection</h3>
         <p> 
@@ -471,22 +1296,69 @@
 
 </body>
 <script>
-let slideIndex = 1;
-showSlides(slideIndex);
+function fitSlide(slide) {
+    const MIN = 11, MAX = 16;   // px; set MAX to your normal size to stop short slides from growing
+    let lo = MIN, hi = MAX;
+    while (hi - lo > 0.25) {
+        const mid = (lo + hi) / 2;
+        slide.style.fontSize = mid + "px";
+        if (slide.scrollHeight > slide.clientHeight) hi = mid; else lo = mid;
+    }
+    slide.style.fontSize = lo + "px";
+}
+const slideIndexes = {};
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+document.querySelectorAll('.slideshow-container').forEach(container => {
+    slideIndexes[container.id] = 1;
+    showSlides(container.id, 1);
+});
+
+function plusSlides(el, n) {
+    const container = el.closest('.slideshow-container');
+    showSlides(container.id, slideIndexes[container.id] += n);
 }
 
-function showSlides(n) {
-  const slides = document.getElementsByClassName("slide");
-  if (n > slides.length) { slideIndex = 1 }
-  if (n < 1) { slideIndex = slides.length }
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slides[slideIndex - 1].style.display = "block";
+// dots use 0-based indexes in your markup, slides are 1-based
+function currentSlide(el, n) {
+    const container = el.closest('.slideshow-container');
+    showSlides(container.id, slideIndexes[container.id] = n + 1);
 }
+
+function showSlides(containerId, n) {
+    const container = document.getElementById(containerId);
+    const slides = container.getElementsByClassName("slide");
+    const dots = container.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndexes[containerId] = 1; n = 1; }
+    if (n < 1) { slideIndexes[containerId] = slides.length; n = slides.length; }
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[n - 1].style.display = "block";
+
+    // sync dots
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].classList.toggle("active", i === n - 1);
+    }
+    if (container.classList.contains("text-slides")) fitSlide(slides[n - 1]);
+
+    // keep the arrows level with the middle of the image, not the caption
+    // (text-only slides have no image, so skip them)
+    const img = slides[n - 1].querySelector("img");
+    if (!img) return;
+    const centerArrows = () => {
+        container.querySelectorAll(".prev, .next").forEach(a => {
+            a.style.top = (img.offsetTop + img.offsetHeight / 2) + "px";
+            a.style.marginTop = (-a.offsetHeight / 2) + "px";
+        });
+    };
+    if (img.complete) centerArrows(); else img.onload = centerArrows;
+}
+
+window.addEventListener("resize", () => {
+    document.querySelectorAll(".slideshow-container").forEach(c => showSlides(c.id, slideIndexes[c.id]));
+});
+document.fonts.ready.then(() => showSlides("SurveyAnswers", slideIndexes["SurveyAnswers"]));
 </script>
 </body>
 </html>

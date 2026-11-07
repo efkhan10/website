@@ -82,6 +82,9 @@
         margin-bottom: 40px;
         width: 1300px;;
     }
+    body .two-col-hero {
+        align-items: center;
+    }
     .two-col-UX {
         display: flex;
         justify-content: space-between;
@@ -277,7 +280,7 @@
     </div>
 
     <div id="header">
-        <p> <h1 class="syne-uniquifier" > scout </h1> 
+        <h1 class="syne-uniquifier" > scout </h1> 
         <small><em>Partnered with Snapchat, in pairs of 2 creating an AR App to be paired with Snapchat Spectacles</em></small></p>
     </div>
         
@@ -314,133 +317,281 @@
 
     <div class="two-col-hero">
         <div class="section">
-            <p class="inter-uniquifier" style="font-weight: 100; font-style: italic; margin-top:-50px;" >  Scout is an augmented reality outdoor companion that enhances hiking, running, climbing, and exploration through hands-free navigation, environmental awareness, and community-driven discovery. </p>
+            <p class="inter-uniquifier" style="font-weight: 100; font-style: italic;" >  Scout is an augmented reality outdoor companion that enhances hiking, running, climbing, and exploration through hands-free navigation, environmental awareness, and community-driven discovery. </p>
+            <ul class="feature-list">
+                <li>
+                    <img src="projectimages/scout/Button1.png" alt="Scout Button 1">
+                    <p class="body-text"><em>Access to personal statistic dashboard i.e. pace, distance, elevation, time</em></p>
+                </li>
+                <li>
+                    <img src="projectimages/scout/Button2.png" alt="Scout Button 2">
+                <p class="body-text"><em>Access to map and location specific information</em></p>
+                </li>
+                <li>
+                    <img src="projectimages/scout/Button3.png" alt="Scout Button 3">
+                    <p class="body-text"><em>Access to view and share community notes through 3-D icons left on the trail</em></p>
+                </li>
+                <li>
+                    <img src="projectimages/scout/Button4.png" alt="Scout Button 4">
+                    <p class="body-text"><em>Opt into a social treasure hunt game to find all 10 gems randomly hidden in your reality</em></p>
+                </li>
+                <li>
+                    <img src="projectimages/scout/Button5.png" alt="Scout Button 5">
+                    <p class="body-text"><em>Settings</em></p>
+                </li>
+            </ul>
         </div>
         <div class="section">
-            <img src="projectimages/scout/scout_splash.jpg" alt="Scout Image" style="width:500px; display:block; margin-left: auto; margin-right: auto"> 
-        </div>
-    </div>
-
-
-    <div class="two-col">
-        <div class="section">
-                <video autoplay muted controls loop>
-                    <source src="projectimages/scout/ScoutClip_reduce.mov" style="width: 100%;"> /* doesnt load and im not sure why because the path is correct */
-		        </video>
-        </div>
-        <div class="section">
-            <p class="inter-uniquifier" style="font-weight: 200;" > Existing outdoor applications often require constant interaction with handheld devices, pulling users away from their surroundings. Scout explores how augmented reality can create a more immersive and connected outdoor experience by embedding information directly into the user’s environment.</p>
-            </p>
-            <p class="inter-uniquifier" style="font-weight: 200;"> Core features included:</p>
-                <ol class="inter-uniquifier" style="font-weight: 150;">
-                    <li>Real-time hiking dashboard</li>
-                    <li>Spatial navigation and route visualization</li>
-                    <li>Community-created AR artifacts</li>
-                    <li>Artifact creation and discovery system</li>
-                    <li>Gamified treasure hunt mechanics</li>
-                </ol>
-        </div>
-    </div>
-
-    <div class="two-col-UX">
-        <div class="section">
-            <p class="inter-uniquifier" style="font-weight: 200; margin-right: 0;"> User Interaction Map: </p>
-        </div>
-        <div class="section">
-            <img src="projectimages/scout/ScoutUXMap.png" alt="Scout Image" style="width:400px; display:block; margin-left: 0; margin-right: auto">        </div>
-        </div>
-    </div>
-    <div class="section">
-        <h3 class="inter-uniquifier" style="font-weight: 200;"> App Design </h3>
-    </div>
-   <div class="two-col-appdesign">
-        <div class="section">
-            <div class="slideshow-container" id="appDesignSlides" style="width: 300px;">
-                <div class="slide"> 
-                    <div class="slidenum">1 / 4</div>
-                    <img src="projectimages/scout/DeerHeadArtifact copy.png" alt="Slide 1" style="width: 300px;">
-                </div>
-                <div class="slide"> 
-                    <div class="slidenum">2 / 4</div>
-                    <img src="projectimages/scout/ViewpointArtifacts copy.png" alt="Slide 2" style="width: 300px;">
-                </div>
-                <div class="slide"> 
-                    <div class="slidenum">3 / 4</div>
-                    <img src="projectimages/scout/WarningArtifact copy.png" alt="Slide 3" style="width:300px; ">
-                </div> 
-                <div class="slide"> 
-                    <div class="slidenum">4 / 4</div>
-                    <img src="projectimages/scout/scoutstats.png" alt="Slide 4" style="width: 300px;">
-                </div> 
-                <a class="prev" onclick="plusSlides(this, -1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(this, 1)">&#10095;</a> 
-            </div>
-        </div>
-        <div class="section">
-             <video autoplay muted controls loop style= "width: 300px;">
-                    <source src="projectimages/scout/scoutrecording!.mp4"> /* doesnt load and im not sure why because the path is correct */
+            <video autoplay muted controls loop style="width:500px; display:block; margin-left: auto; margin-right: auto; align-items: center;">
+                    <source src="projectimages/scout/ScoutClip_reduce.mov"> /* doesnt load and im not sure why because the path is correct */
 		    </video>
         </div>
     </div>
-    <div class="section">
-        <h3 class="inter-uniquifier" style="font-weight: 200;"> User Testing </h3>
+   
+
+       <!-- ============ CARDS ============ -->
+    <!-- The heading of each card is the arrow line. The stage you are on has the pink style. -->
+ 
+    <!-- 1 DEFINE -->
+    <div class="card inter-uniquifier" id="ideate">
+        <h3 class="syne-uniquifier">
+            <span style="color: #EBA6A6;">ideate</span> &rarr; user experience &rarr; build &rarr; test &rarr; iterate &rarr; snap
+        </h3>
+        <p style="font-style: italic; font-weight: 200;">"If you could [function] and feel more efficient [purpose] OR just using your (voice), (hands)..., OR while you also [situation] would you wear glasses for that?"</p>
+        <p class="body-text"> Ideas I brainstormed utilizing the question framework:</p>
+        <ul class="chip">
+            <li>Enhance Travel Exploration</li>
+            <li> AR Learning Modules for Construction Workers / Plumbers</li>
+            <li class="picked">Hiking</li>
+            <li>Cooking</li>
+        </ul>
+        <p class="body-text" > Existing outdoor applications often require constant interaction with handheld devices, pulling users away from their surroundings. Scout explores how augmented reality can create a more immersive and connected outdoor experience by embedding information directly into the user’s environment.</p>
+        <p class="title-sub"> <br> Pain Points of Current Hiking</p>
+        <ul class="chip">
+            <li><strong>Distracting </strong> Tracking pace, distance, and altitude means repeatedly pulling out a phone mid-trail</li>
+            <li><strong>Confusing</strong> Physical trail markers are static and outdated, with no community layer</li>
+            <li><strong>Fragmented community</strong> Sightings, warnings, and hidden spots are scattered across social media, Google Maps, and word of mouth — hard to surface at the right place and time</li>
+        </ul>
+        <p style="font-style: italic; font-weight: 400; color: #EBA6A6;"> <br> Scout: Enhance exploration and safety during outdoor activities (hiking, climbing, backpacking, camping)</p>
+        <ul class="chip-pink" style="justify-content: center;">
+            <li>Real-time hiking dashboard</li>
+            <li>Spatial navigation and route visualization</li>
+            <li>Community-created AR artifacts</li>
+            <li>Artifact creation and discovery system</li>
+            <li>Gamified treasure hunt mechanics</li>
+        </ul>
     </div>
-    <div class="two-col">
-        <div class="section">
-            <div class="slideshow-container" id="userTestingSlides">
-                <div class="slide"> 
-                    <div class="slidenum">1 / 2</div>
-                    <img src="projectimages/scout/usertesting1.png" alt="Slide 1">
-                </div>
-                <div class="slide"> 
-                    <div class="slidenum">2 / 2</div>
-                    <img src="projectimages/scout/usertesting2.png" alt="Slide 2">
-                </div> 
-                <a class="prev" onclick="plusSlides(this, -1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(this, 1)">&#10095;</a> 
+ 
+    <!-- 2 User Experience -->
+    <div class="card inter-uniquifier" id="user experiences">
+        <h3 class="syne-uniquifier">
+            ideate &rarr; <span style="color: #EBA6A6;"> user experience </span> &rarr; build &rarr; test &rarr; iterate &rarr; snap
+        </h3>
+        <p style="font-style: italic; font-weight: 200;"> By just wearing AR glasses, outdoor enthusiasts of all age can enhance outdoor experiences by providing hands-free ways to learn, navigate, connect, and stay safe with ease</p>
+        <p class="body-text"> <span style="color: #EBA6A6;">Trust </span> a cohesive reliable system that has the ability to track and convey information with one device(glasses)</p>
+        <p class="body-text"> <span style="color: #EBA6A6;">Safety </span> users can avoid posionous plants, dangerous routes, and other obstacles</p>
+        <p class="body-text"> <span style="color: #EBA6A6;">Community </span> enables users to stay connected with friends </p>
+        <p class="body-text"> <span style="color: #EBA6A6;">Discovery </span> allows user to find new hidden cool spots </p>
+        <p class="body-text"> <span style="color: #EBA6A6;">Learning </span> users can become knowledgable regarding their surrounds </p>
+        <p class="body-text"> <span style="color: #EBA6A6;">Curiosity </span> users are emplored to go off the path to find artifacts/new sites/animals etc </p>
+        
+        <div class="card-row">
+            <div class="section">
+                <p class="inter-uniquifier" style="font-weight: 200; margin-right: 0;"> User Interactions </p>
+                <ol class="body-text">
+                    <li>Sync to Location</li>
+                    <li>Standard view of dashboard:Pace, altitude, time, location & Main Menu </li>
+                    <li>Main Menu: Access Artifacts, Create Artifacts</li>
+                    <li>Follow route and Access Community Artifacts</li>
+                    <li>Create Artifacts to share with others</li>
+                    <li>Achievement Artifacts for Gamefication</li>
+                </ol>
+            </div>
+            <div class="section">
+                <img src="projectimages/scout/Scout_UXMap.png" alt="Scout UX Map" style="width:400px; display:block; margin-left: auto; margin-right: auto">     
             </div>
         </div>
-        <div class="section">
-            <h5 class="inter-uniquifier" style="font-weight: 200; font-style: italic;">What worked well:</h5>
-            <ul class="inter-uniquifier" style="font-weight: 200; font-size: 14px;">
-                <li>Positive first impressions of the starting scene UI across all testers</li>
-                <li>Users engaged well with the stats page, especially those already familiar with fitness tracking apps like Strava</li>
-                <li>The artifact discovery concept resonated with users</li>
-                <li>Tutorial was effective when users engaged with it fully</li>
-            </ul>
-
-            <h5 class="inter-uniquifier" style="font-weight: 200; font-style: italic;">Areas for improvement:</h5>
-            <ul class="inter-uniquifier" style="font-weight: 200; font-size: 14px;">
-                <li>Menu bar and empty space in certain scenes caused confusion</li>
-                <li>Find and report buttons were inconsistent in functionality</li>
-                <li>Artifacts sometimes failed to appear/trigger, preventing users from viewing messages</li>
-                <li>Overall UI needs refinement to feel less static and more responsive to user movement</li>
-            </ul>
-
-            <h5 class="inter-uniquifier" style="font-weight: 200; font-style: italic;">Feature requests:</h5>
-            <ul class="inter-uniquifier" style="font-weight: 200; font-size: 14px;">
-                <li>More gamification, with comparisons to Pokémon Go</li>
-                <li>Artifacts and collectible elements should feel integrated rather than distracting</li>
-                <li>One non-hiker user expressed more interest in gamified elements than hiking-specific features</li>
-            </ul>
+        <div class="card-row">
+            <p class="inter-uniquifier" style="font-weight: 200; margin-right: 0;"> Rewards </p>
+            <p class="body-text">  <span style="color: #EBA6A6;">Autonomy</span> <br> Users are encouraged to mold their own path & choose their own adventure(artifacts)</p>
+            <p class="body-text">  <span style="color: #EBA6A6;">Competency</span> <br> Users can become more competent in the outside world through real time community commentary, stats, and location tracking </p>
+            <p class="body-text">  <span style="color: #EBA6A6;">Relatability</span> <br> Enables users to stay connected with friends  and build community with those similar</p>
+            <p class="body-text">  <span style="color: #EBA6A6;">Reciprocity</span> <br> Allows can have a symbiotic relationship of receiving and giving through use of community artifacts</p>
+        </div>
+        <div class="card-row">
+            <div class="stars">
+                <span>&#9733; </span>
+                <span>&#9733;</span> 
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+            </div>
         </div>
     </div>
-
-    <div class="two-col">
-        <div class="section">
-            <h3 class="inter-uniquifier" style="font-weight: 200;"> Snap Inc</h3>
-            <p class="inter-uniquifier" style="font-weight: 200; font-size: 14px;"> I had the opportunity to present Scout to Snap Inc. at their headquarters in Venice, CA. The product and engineering team was tested the concept and execution of the app, and provided valuable feedback for future iterations. </p>        
+ 
+    <!-- 3 Build -->
+    <div class="card inter-uniquifier" id="build">
+        <h3 class="syne-uniquifier">
+            ideate &rarr; user experience &rarr;<span style="color: #EBA6A6;">build</span> &rarr; test &rarr; iterate &rarr; snap
+        </h3>
+        <p style="font-style: italic; font-weight: 200;"> Spatial Design, Blender 3D Builds, Coding(TypeScript/JavaScript, Claude, Cursor), LensStudio</p>
+        <div class="card-row">
+            <div class="section">
+                <p class="inter-uniquifier" style="font-weight: 200; margin-right: 0;"> Spatial Design </p>
+                <p class="body-text"> Taken into account how the AR artifacts will coincide with the real world. The drawing on the left shows a rough early composition of how the digital scenes will overlay with the environment. Taking into account eye-level, distance, movement, and the outside world. </p>
+            </div>
+            <div class="section">
+                <img src="projectimages/scout/scoutspatialawarenes.png" alt="Scout Spatial Awareness" style="width:200px; display:block; margin-left: auto; margin-right: auto">        
+            </div>
         </div>
-        <div class="section">
-            <img src="projectimages/scout/snapchatheadquarters.png" style="width:200px; display:block; margin-left:auto; margin-right:auto;">
+        <div class="card-row">
+            <div class="section">
+                <p class="inter-uniquifier" style="font-weight: 200; text-align: center;"> Blender 3D Builds </p>
+                <div class="slideshow-container" id="appDesignSlides" style="width: 350px; display:block;margin:auto; ">
+                    <div class="slide"> 
+                        <div class="slidenum">1 / 4</div>
+                        <img src="projectimages/scout/DeerHeadArtifact copy.png" alt="Slide 1" style="width: 350px;">
+                    </div>
+                    <div class="slide"> 
+                        <div class="slidenum">2 / 4</div>
+                        <img src="projectimages/scout/ViewpointArtifacts copy.png" alt="Slide 2" style="width: 350px;">
+                    </div>
+                    <div class="slide"> 
+                        <div class="slidenum">3 / 4</div>
+                        <img src="projectimages/scout/WarningArtifact copy.png" alt="Slide 3" style="width:350px; ">
+                    </div> 
+                    <div class="slide"> 
+                        <div class="slidenum">4 / 4</div>
+                        <img src="projectimages/scout/scoutstats.png" alt="Slide 4" style="width: 350px;">
+                    </div> 
+                    <a class="prev" onclick="plusSlides(this, -1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(this, 1)">&#10095;</a> 
+                </div>
+            </div>
+            <div class="section">
+                <p class="inter-uniquifier" style="font-weight: 200; text-align:center;"> Coding </p>
+                <p style="font-weight:200"><small> 7 Coding files created, Artifact Menu Controller below:</small></p>
+                <iframe src="projectimages/scout/ArtifactMenuControllerExample.txt" style="width:100%; height:400px; border:1px solid #ececec; border-radius:10px;"> </iframe>
+            </div>
+        </div>
+        <p class="inter-uniquifier" style="font-weight: 200; text-align: center;"> Feature Highlights </p>
+        <p class="body-text" style=" text-align: center;"> Designs were first made in Figma then imported into LensStudio to attach TyepScript code. </p>
+        <div class="card-row">
+            <div class="slideshow-container" id="featureSlides" style="width: 350px; display:block;margin:auto; ">
+                    <div class="slide"> 
+                        <div class="slidenum">1 / 4</div>
+                        <img src="projectimages/scout/Navigation Menu.png" alt="Slide 1" style="width: 350px;">
+                    </div>
+                    <div class="slide"> 
+                        <div class="slidenum">2 / 4</div>
+                        <img src="projectimages/scout/Statistics Menu.png" alt="Slide 2" style="width: 350px;">
+                        <div class="subtitle"> The statistic were updated every 30 seconds. I created the rings using code to create a responsive UI graph akin to the apple watch UI. </div>
+                    </div>
+                    <div class="slide"> 
+                        <div class="slidenum">3 / 4</div>
+                        <img src="projectimages/scout/Settings Menu.png" alt="Slide 3" style="width:350px; ">
+                    </div> 
+                    <a class="prev" onclick="plusSlides(this, -1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(this, 1)">&#10095;</a> 
+                </div>
+        </div>
+        <p class="inter-uniquifier" style="font-weight: 200; text-align: center;"> Final Product </p>
+        <div class="card-row">
+            <div class="section">
+                <video autoplay muted controls loop style="width:300px;">
+                    <p>add the outside version</p>
+                    <source src="projectimages/scout/scoutrecording!.mp4"> /* doesnt load and im not sure why because the path is correct */
+		        </video>
+            </div>
+            <div class="section">
+                <p class="body-text" style="text-align:center"> iphone app mockup, complimentary to the lens</p>
+                <img src="projectimages/scout/scoutiphoneapp.png" alt="Scout iPhone App" style="width:300px; display:block; margin-left: auto; margin-right: auto">
+            </div>
+        </div>            
+    </div>
+ 
+    <!-- 4 Test -->
+    <div class="card inter-uniquifier" id="test">
+        <h3 class="syne-uniquifier">
+            ideate &rarr; user experience &rarr; build &rarr;<span style="color: #EBA6A6;">test</span> &rarr; iterate &rarr; snap
+        </h3>
+        <p style="font-style: italic; font-weight: 200;"> User Testing</p>
+        <div class="card-row" style="align-items: center;">
+            <div class="section">
+                <h5 class="inter-uniquifier" style="font-weight: 200; font-style: italic;">What worked well:</h5>
+                <ul class="body-text">
+                    <li>Positive first impressions of the starting scene UI across all testers</li>
+                    <li>Users engaged well with the stats page, especially those already familiar with fitness tracking apps like Strava</li>
+                    <li>The artifact discovery concept resonated with users</li>
+                    <li>Tutorial was effective when users engaged with it fully</li>
+                </ul>
+
+                <h5 class="inter-uniquifier" style="font-weight: 200; font-style: italic;">Areas for improvement:</h5>
+                <ul class="body-text">
+                    <li>Menu bar and empty space in certain scenes caused confusion</li>
+                    <li>Find and report buttons were inconsistent in functionality</li>
+                    <li>Artifacts sometimes failed to appear/trigger, preventing users from viewing messages</li>
+                    <li>Overall UI needs refinement to feel less static and more responsive to user movement</li>
+                </ul>
+
+                <h5 class="inter-uniquifier" style="font-weight: 200; font-style: italic;">Feature requests:</h5>
+                <ul class="body-text">
+                    <li>More gamification, with comparisons to Pokémon Go</li>
+                    <li>Artifacts and collectible elements should feel integrated rather than distracting</li>
+                    <li>One non-hiker user expressed more interest in gamified elements than hiking-specific features</li>
+                </ul>
+            </div>
+            <div class="section">
+                <div class="slideshow-container" id="userTestingSlides">
+                    <div class="slide" style="margin-top: auto;margin-bottom: auto;"> 
+                        <div class="slidenum">1 / 2</div>
+                        <img src="projectimages/scout/usertesting1.png" alt="Slide 1">
+                    </div>
+                    <div class="slide"> 
+                        <div class="slidenum">2 / 2</div>
+                        <img src="projectimages/scout/usertesting2.png" alt="Slide 2">
+                    </div> 
+                    <a class="prev" onclick="plusSlides(this, -1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(this, 1)">&#10095;</a> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 5 Iterations -->
+    <div class="card inter-uniquifier" id="iterations">
+        <h3 class="syne-uniquifier">
+            ideate &rarr; user experience &rarr; build &rarr;test &rarr; <span style="color:#EBA6A6;">iterations</span> &rarr; snap
+        </h3>
+        <p style="font-style: italic; font-weight: 200;"> Examples of rapid prototyping</p>
+        <div class="card-row">
+            <div class="section">
+                <p class="body-text"> The first iterations included a stagnant menu that would overlay at the top of the person's viewpoint, in a neutral orange-pink color. Green & blue would clash with the outdoors. </p>
+                <p class="chip-text"> <em> Color Changes:</em> <br> Snap Engineers after testing reccomended the color purple as it is a complementary color to <em>yellow</em> so would overlay well with the sun</p>
+                <p class="chip-text"> <em> Design Changes: </em> <br> To be less interruptive, the hanging horizontal menu became vertical and veered toward the right side. The statistics are now hidden behind a button, allowing hikers to feel immersed but can intuitevly access various options.</p>
+            </div>
+            <div class="section"> 
+                 <video autoplay muted controls loop style="width:300px;">
+                    <source src="projectimages/scout/scoutiteration1.mp4"> /* doesnt load and im not sure why because the path is correct */
+		        </video>
+            </div>
+        </div>
+    </div>
+    <!-- 6 Pitch -->
+    <div class="card inter-uniquifier" id="pitch">
+        <h3 class="syne-uniquifier">
+            ideate &rarr; user experience &rarr; build &rarr;test &rarr; iterations &rarr; <span style="color:#EBA6A6;">snap</span>
+        </h3>
+        <h3 class="inter-uniquifier" style="font-weight: 200; "> <br> Snap Inc</h3>
+        <div class="card-row">
+            <div class="section">
+                <p class="body-text"> I had the opportunity to present Scout to Snap Inc. at their headquarters in Venice, CA. The product and engineering team was tested the concept and execution of the app, and provided valuable feedback for future iterations. </p>        
+            </div>
+            <div class="section"> 
+                <img src="projectimages/scout/snapchatheadquarters.png" style="width:200px; display:block; margin-left:auto; margin-right:auto;">
+            </div>
         </div>
     </div>  
-       <!-- <div class="section">
-        <h3 id="reflection" > Reflection</h3>
-        <p> 
-            I think
-        </p>
-	</div> --> 
+
     <div id="footer">
         <p> &copy; 2025 Emaan Khan | efkhan@usc.edu | 
             <a href="https://www.linkedin.com/in/emaankhan-/" target="_blank" rel="noopener noreferrer" class="linkedin-btn" style="font-size:20px; color:black; padding:3px; margin-top:5px;">

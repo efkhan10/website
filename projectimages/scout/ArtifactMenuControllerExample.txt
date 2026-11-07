@@ -1,0 +1,340 @@
+// ============================================================
+//  ARTIFACT MENU CONTROLLER — Lens Studio v5.7+
+//
+//  SLOTS TO FILL IN INSPECTOR:
+//  ───────────────────────────
+//  animalButton      → Animal Sighting Button RectangleButton
+//  viewpointButton   → Viewpoint Button RectangleButton
+//  warningButton     → Warning Button RectangleButton
+//  confirmButton     → Confirm Button RectangleButton
+//  cancelButton      → Cancel Button RectangleButton
+//  menuRoot          → SubmitArtifact SceneObject
+//  recordingUI       → RecordingUI SceneObject
+//  confirmCancelUI   → Confirm/Cancel SceneObject
+//  recordText        → Record Text component
+//  audioComponent    → Audio Component on Audio Manager
+//  microphoneAudio   → Microphone Audio asset
+//  animalPrefab      → DeerHeadArtifact prefab
+//  viewpointPrefab   → ViewpointArtifactblend prefab
+//  warningPrefab     → WarningArtifact prefab
+// ============================================================
+
+import { RectangleButton } from "SpectaclesUIKit.lspkg/Scripts/Components/Button/RectangleButton";
+
+// ── Artifact types matching your 3 buttons ────────────────────
+export enum ArtifactType {
+    Animal    = "animal",
+    Viewpoint = "viewpoint",
+    Warning   = "warning",
+}
+
+// ── Data saved per placed artifact ───────────────────────────
+export interface PlacedArtifactData {
+    id: string;
+    type: ArtifactType;
+    latitude: number;
+    longitude: number;
+    altitude: number;
+    worldPosition: vec3;
+    audioSamples: number[];   // recorded mic samples
+    sceneObject: SceneObject;
+}
+
+@component
+export class ArtifactMenuController extends BaseScriptComponent {
+
+    // ── Buttons ───────────────────────────────────────────────
+
+    @input('Component.ScriptComponent')
+    animalButton: RectangleButton;
+
+    @input('Component.ScriptComponent')
+    viewpointButton: RectangleButton;
+
+    @input('Component.ScriptComponent')
+    warningButton: RectangleButton;
+
+    @input('Component.ScriptComponent')
+    confirmButton: RectangleButton;
+
+    @input('Component.ScriptComponent')
+    cancelButton: RectangleButton;
+
+    // ── UI Panels ─────────────────────────────────────────────
+
+    @input('SceneObject')
+    menuRoot: SceneObject;
+
+    @input('SceneObject')
+    recordingUI: SceneObject;
+
+    @input('SceneObject')
+    confirmCancelUI: SceneObject;
+
+    @input('Component.Text')
+    recordText: Text;
+
+    // ── Audio ─────────────────────────────────────────────────
+
+    @input('Component.AudioComponent')
+    audioComponent: AudioComponent;
+
+    @input
+    microphoneAudio: AudioTrackAsset;
+
+    // ── Prefabs ───────────────────────────────────────────────
+
+    @input
+    animalPrefab: ObjectPrefab;
+
+    @input
+    viewpointPrefab: ObjectPrefab;
+
+    @input
+    warningPrefab: ObjectPrefab;
+
+    // ── Private state ─────────────────────────────────────────
+
+    private prefabMap: Map<ArtifactType, ObjectPrefab>;
+    private lockedWorldPosition: vec3 = vec3.zero();
+    private lockedGPSPosition: vec3 = vec3.zero(); // x=lat, y=lon, z=alt
+    private ghostObject: SceneObject | null = null;
+    private selectedType: ArtifactType | null = null;
+    private isRecording: boolean = false;
+    private recordingChunks: number[] = [];
+    private recordingEvent: SceneEvent | null = null;
+
+    // All placed artifacts — ArtifactDiscovery reads this
+    public placedArtifacts: PlacedArtifactData[] = [];
+
+    // ── Lifecycle ─────────────────────────────────────────────
+
+    onAwake() {
+        var startEvent = this.createEvent("OnStartEvent");
+        startEvent.bind(() => this.init());
+    }
+
+    init() {
+        this.prefabMap = new Map([
+            [ArtifactType.Animal,    this.animalPrefab],
+            [ArtifactType.Viewpoint, this.viewpointPrefab],
+            [ArtifactType.Warning,   this.warningPrefab],
+        ]);
+
+        // Hide all panels at start
+        this.menuRoot.enabled       = false;
+        this.recordingUI.enabled    = false;
+        this.confirmCancelUI.enabled = false;
+
+        // Set mic as the audio source
+        this.audioComponent.audioTrack = this.microphoneAudio;
+
+        // ── Button bindings ───────────────────────────────────
+
+        this.animalButton.onTriggerUp.add(() => {
+            this.onTypeSelected(ArtifactType.Animal);
+        });
+
+        this.viewpointButton.onTriggerUp.add(() => {
+            this.onTypeSelected(ArtifactType.Viewpoint);
+        });
+
+        this.warningButton.onTriggerUp.add(() => {
+            this.onTypeSelected(ArtifactType.Warning);
+        });
+
+        // Confirm: stops recording on first pinch, confirms on second
+        this.confirmButton.onTriggerUp.add(() => {
+            if (this.isRecording) {
+                this.stopRecording();
+            } else {
+                this.confirmPlacement();
+            }
+        });
+
+        this.cancelButton.onTriggerUp.add(() => {
+            this.cancelPlacement();
+        });
+
+        print("ArtifactMenuController ready");
+    }
+
+    // ── Public: called by ArtifactPlacer on surface pinch ────
+    // Pass world position of hit point + GPS coordinates
+
+    showMenu(worldPos: vec3, latitude: number, longitude: number, altitude: number) {
+        this.lockedWorldPosition = worldPos;
+        this.lockedGPSPosition   = new vec3(latitude, longitude, altitude);
+        this.menuRoot.enabled    = true;
+        print("Menu shown — GPS: " + latitude + ", " + longitude);
+    }
+
+    hideMenu() {
+        this.menuRoot.enabled = false;
+    }
+
+    // ── Artifact type selected ────────────────────────────────
+
+    private onTypeSelected(type: ArtifactType) {
+        this.selectedType = type;
+        this.hideMenu();
+        this.showGhostPreview(type);
+        this.startRecording();
+    }
+
+    // ── Ghost preview ─────────────────────────────────────────
+
+    private showGhostPreview(type: ArtifactType) {
+        this.clearGhost();
+        const prefab = this.prefabMap.get(type);
+        if (!prefab) return;
+        this.ghostObject = prefab.instantiate(null);
+        this.ghostObject.getTransform().setWorldPosition(
+            this.lockedWorldPosition.add(new vec3(0, 10, 0))
+        );
+        // Make ghost semi-transparent by scaling slightly
+        this.ghostObject.getTransform().setLocalScale(new vec3(0.8, 0.8, 0.8));
+        print("Ghost preview: " + type);
+    }
+
+    private clearGhost() {
+        if (this.ghostObject) {
+            this.ghostObject.destroy();
+            this.ghostObject = null;
+        }
+    }
+
+    // ── Recording ─────────────────────────────────────────────
+
+    private startRecording() {
+        this.recordingChunks     = [];
+        this.isRecording         = true;
+        this.recordingUI.enabled  = true;
+        this.confirmCancelUI.enabled = false;
+
+        if (this.recordText) {
+            this.recordText.text = "🎙 Recording... pinch Confirm to stop";
+        }
+
+        // Start mic capture
+        this.audioComponent.play(1);
+
+        // Sample mic each frame into our buffer
+        // Using UpdateEvent — stopped when isRecording goes false
+        var updateEvent = this.createEvent("UpdateEvent");
+        this.recordingEvent = updateEvent;
+        updateEvent.bind(() => {
+            if (!this.isRecording) {
+                updateEvent.enabled = false;
+                return;
+            }
+            // Read raw samples from the mic audio track
+            var frame = new Float32Array(512);
+            (this.microphoneAudio as any).getAudioFrame(frame);
+            for (var i = 0; i < frame.length; i++) {
+                this.recordingChunks.push(frame[i]);
+            }
+        });
+
+        print("Recording started");
+    }
+
+    private stopRecording() {
+        this.isRecording              = false;
+        this.recordingUI.enabled      = false;
+        this.confirmCancelUI.enabled  = true;
+        this.audioComponent.stop();
+
+        if (this.recordText) {
+            this.recordText.text = "Recording saved";
+        }
+
+        print("Recording stopped — " + this.recordingChunks.length + " samples");
+    }
+
+    // ── Confirm placement ─────────────────────────────────────
+
+    private confirmPlacement() {
+        if (!this.selectedType) return;
+
+        this.clearGhost();
+        this.confirmCancelUI.enabled = false;
+
+        const prefab = this.prefabMap.get(this.selectedType);
+        if (!prefab) return;
+
+        // Place the real artifact
+        const artifact = prefab.instantiate(null);
+        const finalPos = this.lockedWorldPosition.add(new vec3(0, 10, 0));
+        artifact.getTransform().setWorldPosition(finalPos);
+        artifact.getTransform().setLocalScale(new vec3(1, 1, 1));
+
+        // Generate unique ID
+        const id = this.selectedType + "_" + Date.now();
+        artifact.name = id;
+
+        // Save all data including GPS + audio
+        const data: PlacedArtifactData = {
+            id:            id,
+            type:          this.selectedType,
+            latitude:      this.lockedGPSPosition.x,
+            longitude:     this.lockedGPSPosition.y,
+            altitude:      this.lockedGPSPosition.z,
+            worldPosition: finalPos,
+            audioSamples:  [...this.recordingChunks],
+            sceneObject:   artifact,
+        };
+
+        this.placedArtifacts.push(data);
+
+        print("Artifact placed: " + id +
+              " at GPS " + data.latitude + ", " + data.longitude +
+              " with " + data.audioSamples.length + " audio samples");
+
+        // Reset
+        this.selectedType    = null;
+        this.recordingChunks = [];
+    }
+
+    // ── Cancel ────────────────────────────────────────────────
+
+    private cancelPlacement() {
+        if (this.isRecording) {
+            this.isRecording = false;
+            this.audioComponent.stop();
+        }
+        this.recordingUI.enabled     = false;
+        this.confirmCancelUI.enabled = false;
+        this.clearGhost();
+        this.selectedType    = null;
+        this.recordingChunks = [];
+        print("Placement cancelled");
+    }
+
+    // ── Public: play back a specific artifact's audio ─────────
+    // Called by ArtifactDiscovery when user pinches a placed artifact
+
+    playArtifactAudio(data: PlacedArtifactData) {
+        if (!data.audioSamples || data.audioSamples.length === 0) {
+            print("No audio for artifact: " + data.id);
+            return;
+        }
+        // Reconstruct Float32Array from stored samples
+        const buffer = new Float32Array(data.audioSamples.length);
+        for (var i = 0; i < data.audioSamples.length; i++) {
+            buffer[i] = data.audioSamples[i];
+        }
+        // Play via AudioOutput BufferPlayer (requires AudioOutput template in scene)
+        try {
+            const player = new (global as any).AudioHelpers.BufferPlayer(buffer);
+            (global as any).audioOutput.connect(player);
+            player.play(1);
+            print("Playing audio for: " + data.id);
+        } catch(e) {
+            // Fallback: replay via audio component directly
+            this.audioComponent.audioTrack = this.microphoneAudio;
+            this.audioComponent.play(1);
+            print("Fallback playback for: " + data.id);
+        }
+    }
+}
