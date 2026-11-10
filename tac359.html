@@ -168,12 +168,10 @@
     .syne-uniquifier {
         font-size: 32px;
     }
-    .overview {
-        width: 90%;
-        gap: 20px;
-    }
     .section {
         width: 100%;
+        box-sizing: border-box;
+        padding: 0 20px;
     }
     .two-col {
         flex-direction: column;
@@ -193,7 +191,6 @@
         width: 100% !important;
     }
     iframe {
-        width: 100%;
         height: 400px;
     }
 }
@@ -262,7 +259,7 @@
         <p class="inter-uniquifier" style="font-weight: 100; font-style: italic; text-align: center;"> This project focused on implementing a Deep Q-Learning (DQN) agent to solve the Taxi-v3 environment by teaching a taxi to pick up and drop off passengers as efficiently as possible. </p>
     </div>
 
-    <div class="section report-body">
+    <div class="section">
         <h3 class="inter-uniquifier" style="font-weight: 300;"> Summary </h3>
         <p class="inter-uniquifier" style="font-weight: 200;">
             We worked through the assignment code step-by-step, starting with the class-provided code and filling in each required component of the DQN process. This included building a small neural network to approximate Q-values, implementing an epsilon-greedy action strategy, and using the Bellman equation to update the model's predictions during training. We also generated plots to visualize rewards, epsilon decay, average steps, and loss, and built an interactive HTML dashboard to display the model's progress.
@@ -276,7 +273,7 @@
         <iframe src="projectimages/tac359/TAC359Final.html" style="height: 600px; border: 1px solid #ddd; border-radius: 8px;"></iframe>
     </div>
 
-    <div class="section report-body">
+    <div class="section">
         <h3 class="inter-uniquifier" style="font-weight: 300;"> Approach </h3>
         <p class="inter-uniquifier" style="font-weight: 200;">
             Our group worked through the assignment chronologically to ensure that we understood each step of the DQN process. The first step was reading through the provided code from Professor Prescher to understand which parts of the problem were already completed and where we needed to fill in information.
@@ -341,21 +338,21 @@
 
     </div>
 
-    <div class="section report-body">
+    <div class="section">
         <h3 class="inter-uniquifier" style="font-weight: 300;"> Future Enhancements </h3>
         <p class="inter-uniquifier" style="font-weight: 200;">
             If we did this project again, we would adjust hyperparameters one at a time — learning rate, gamma, epsilon decay, batch size — to improve training stability and isolate each one's impact. We'd also increase training time with more episodes, better computing power, and model checkpointing to see whether performance continues improving or plateaus like the FULL mode did. Finally, we'd consider complicating the neural network itself, such as adding dropout layers or more hidden units, to help the model learn more stable Q-values.
         </p>
     </div>
 
-    <div class="section report-body">
+    <div class="section">
         <h3 class="inter-uniquifier" style="font-weight: 300;"> Risks </h3>
         <p class="inter-uniquifier" style="font-weight: 200;">
             Deep Q-Learning carries risks beyond those of supervised learning. The Bellman equation and Q-value estimation can overestimate value in continuous environments, and unstable replay buffers or targets can cause overfitting or divergence as the model grows. Balancing exploration and exploitation through the epsilon-greedy strategy is difficult to tune well, and the model remains sensitive to hyperparameter changes, shifts in the training environment, or the introduction of new states — any of which can cause it to "forget" prior learning. There's also the risk of the model exploiting loopholes in the reward structure rather than learning the intended behavior, if that structure isn't specific enough.
         </p>
     </div>
 
-    <div class="section report-body">
+    <div class="section">
         <h3 class="inter-uniquifier" style="font-weight: 300;"> AI Acknowledgements </h3>
         <p class="inter-uniquifier" style="font-weight: 200;">
             <strong>Initial code (Claude):</strong> used to summarize project scope, break down concepts like the Bellman equation, and assist with debugging when the model wasn't running continuously.
